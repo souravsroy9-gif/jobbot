@@ -1,0 +1,119 @@
+function renderJobs(jobs) {
+
+const container = document.getElementById('jobsList');
+
+document.getElementById('emptyState')
+.classList.toggle('hidden', jobs.length > 0);
+
+document.getElementById('jobCounter')
+.textContent = jobs.length + ' Jobs';
+
+const icons = {
+government:'🏛️',
+bank:'🏦',
+private:'🏢',
+fresher:'🎓'
+};
+
+container.innerHTML = jobs.map((j, i) => `
+
+<div
+class="glass rounded-2xl p-5 job-card cursor-pointer border border-white/10 hover:border-emerald-500/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-300"
+
+onclick="openJobModal('${j.id}')"
+
+style="animation-delay:${i*0.05}s"
+>
+
+<div class="flex items-start gap-4">
+
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center text-2xl border border-white/10">
+
+${icons[j.category] || '💼'}
+
+</div>
+
+<div class="flex-1">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<h3 class="font-semibold text-base text-white">
+
+${j.title}
+
+</h3>
+
+<p class="text-sm text-slate-400">
+
+${j.company}
+
+</p>
+
+</div>
+
+<button
+onclick="event.stopPropagation();toggleSave('${j.id}')"
+class="text-xl hover:scale-125 transition"
+>
+
+${savedJobs.includes(j.id)?'⭐':'☆'}
+
+</button>
+
+</div>
+
+
+<div class="flex flex-wrap gap-3 mt-3 text-xs text-slate-400">
+
+<span class="bg-white/5 px-2 py-1 rounded">
+📍 ${j.location}
+</span>
+
+<span class="bg-white/5 px-2 py-1 rounded text-emerald-400 font-medium">
+💰 ${j.salary}
+</span>
+
+<span class="bg-white/5 px-2 py-1 rounded">
+⏱ ${j.type || 'Full Time'}
+</span>
+
+<span class="bg-white/5 px-2 py-1 rounded">
+🎓 ${j.experience || 'Fresher'}
+</span>
+
+</div>
+
+
+<div class="flex items-center justify-between mt-4">
+
+<span class="text-xs text-slate-500">
+
+${j.posted}
+
+</span>
+
+<button
+class="btn-primary px-4 py-1.5 rounded-lg text-xs font-medium"
+onclick="event.stopPropagation();openJobModal('${j.id}')"
+>
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`).join('');
+
+document.getElementById('jobsList')
+.classList.remove('hidden');
+
+}
