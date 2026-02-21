@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobBot Pro – Agartala Jobs</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080f;--s1:#0b1018;--s2:#101520;--s3:#141b25;
+  --b1:rgba(255,255,255,0.06);--b2:rgba(255,255,255,0.1);--b3:rgba(255,255,255,0.16);
+  --t1:#edf2fa;--t2:#9ba8bf;--t3:#5a687d;
+  --g:#00f5a8;--g2:#00d490;--g3:rgba(0,245,168,0.12);--g4:rgba(0,245,168,0.06);
+  --c:#00d4f5;--c2:rgba(0,212,245,0.12);
+  --a:#f5b800;--a2:rgba(245,184,0,0.12);
+  --r:#ff4d6d;--r2:rgba(255,77,109,0.12);
+  --p:#9d7fff;--p2:rgba(157,127,255,0.12);
+  --o:#ff7c2a;--o2:rgba(255,124,42,0.12);
+  --font:'Plus Jakarta Sans',sans-serif;--mono:'JetBrains Mono',monospace;
+  --radius:14px;--radius-sm:10px;--radius-xs:7px;
+  --shadow:0 4px 24px rgba(0,0,0,0.4);--shadow-lg:0 12px 48px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:var(--font);min-height:100vh;font-size:13px;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,245,168,0.04) 0%,transparent 65%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,245,0.03) 0%,transparent 65%);pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:rgba(0,245,168,0.2);border-radius:3px}
+
+/* ─── GLASS SYSTEM ─── */
+.g1{background:rgba(11,16,24,0.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1)}
+.g2{background:rgba(16,21,32,0.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--b2)}
+.g3{background:rgba(20,27,37,0.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--b3)}
+
+/* ─── TYPOGRAPHY ─── */
+.t-head{font-weight:800;letter-spacing:-.4px}
+.t-sub{color:var(--t2);font-size:11px}
+.mono{font-family:var(--mono)}
+.gtext{background:linear-gradient(120deg,var(--g),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ─── ANIMATIONS ─── */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{transform:translateX(110%)}to{transform:translateX(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 1px rgba(0,245,168,.2),0 0 20px rgba(0,245,168,.15)}50%{box-shadow:0 0 0 1px rgba(0,245,168,.4),0 0 40px rgba(0,245,168,.3)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pop{0%{transform:scale(.9);opacity:0}70%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes countDown{from{stroke-dashoffset:0}to{stroke-dashoffset:126}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--g);animation:pulse 1.8s infinite;display:inline-block;flex-shrink:0}
+.spin-anim{animation:spin 1s linear infinite}
+.fade-up{animation:fadeUp .35s ease both}
+.slide-in{animation:slideIn .32s cubic-bezier(.2,1,.3,1) both}
+.pop-in{animation:pop .3s ease both}
+.float{animation:float 3s ease infinite}
+
+/* ─── HEADER ─── */
+header{position:sticky;top:0;z-index:40;background:rgba(5,8,15,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--b1)}
+.hdr{max-width:1040px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px;position:relative;z-index:1}
+
+/* ─── LOGO (glass app icon style) ─── */
+.logo-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(145deg,#081510,#0e2118);border:1px solid rgba(0,245,168,.3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;animation:glow 3s ease infinite}
+.logo-icon::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(transparent,rgba(0,245,168,.06),transparent 40%);animation:spin 6s linear infinite}
+.logo-title{font-size:17px;font-weight:800;letter-spacing:-.5px}
+.logo-sub{font-size:10px;color:var(--t3);display:flex;align-items:center;gap:5px;margin-top:1px}
+
+/* ─── ICON BUTTONS ─── */
+.ibtn{width:36px;height:36px;border-radius:10px;background:var(--b1);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s;flex-shrink:0;color:var(--t2)}
+.ibtn:hover{background:var(--b2);border-color:var(--b2);color:var(--t1);transform:translateY(-1px)}
+.ibtn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── BADGES ─── */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.2px;font-family:var(--mono)}
+.badge-green{background:var(--g3);color:var(--g);border:1px solid rgba(0,245,168,.2)}
+.badge-cyan{background:var(--c2);color:var(--c);border:1px solid rgba(0,212,245,.2)}
+.badge-amber{background:var(--a2);color:var(--a);border:1px solid rgba(245,184,0,.2)}
+.badge-red{background:var(--r2);color:var(--r);border:1px solid rgba(255,77,109,.2)}
+.badge-purple{background:var(--p2);color:var(--p);border:1px solid rgba(157,127,255,.2)}
+.badge-orange{background:var(--o2);color:var(--o);border:1px solid rgba(255,124,42,.2)}
+.badge-muted{background:var(--b1);color:var(--t3);border:1px solid var(--b1)}
+.badge-new-anim{animation:pulse .9s infinite}
+.counter{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;background:var(--g3);color:var(--g);border:1px solid rgba(0,245,168,.2);font-family:var(--mono)}
+
+/* ─── STATUS BAR ─── */
+.status{max-width:1040px;margin:0 auto;padding:5px 16px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t3);position:relative;z-index:1}
+.status-link{color:var(--g);cursor:pointer;font-weight:700;transition:opacity .15s}
+.status-link:hover{opacity:.75}
+
+/* ─── WRAP ─── */
+.wrap{max-width:1040px;margin:0 auto;padding:12px 16px 120px;position:relative;z-index:1}
+
+/* ─── SEARCH ─── */
+.search-wrap{display:flex;gap:8px;margin-bottom:10px}
+.search-input{flex:1;background:rgba(11,16,24,0.7);backdrop-filter:blur(12px);border:1px solid var(--b2);border-radius:var(--radius);padding:0 16px 0 44px;height:46px;color:var(--t1);font-family:var(--font);font-size:13px;transition:all .2s;position:relative}
+.search-input::placeholder{color:var(--t3)}
+.search-input:focus{outline:none;border-color:var(--g);background:rgba(0,245,168,.04);box-shadow:0 0 0 3px rgba(0,245,168,.1)}
+.search-wrapper{flex:1;position:relative}
+.search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--t3);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
+.btn{height:46px;border-radius:var(--radius);border:none;cursor:pointer;font-family:var(--font);font-weight:700;font-size:12px;padding:0 18px;transition:all .18s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--g),var(--g2));color:#04120b}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,245,168,.3)}
+.btn-icon{width:46px;padding:0;justify-content:center;background:var(--b1);border:1px solid var(--b1);color:var(--t2)}
+.btn-icon:hover{background:var(--b2);color:var(--t1)}
+
+/* ─── FILTER ROW ─── */
+.filter-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.filter-select{background:var(--s2);border:1px solid var(--b2);border-radius:var(--radius-sm);padding:6px 12px;color:var(--t2);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .18s;appearance:none;-webkit-appearance:none}
+.filter-select:focus{outline:none;border-color:var(--g)}
+.filter-label{font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+
+/* ─── TABS ─── */
+.tabs{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;margin-bottom:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--radius-sm);border:1px solid var(--b1);background:rgba(11,16,24,.6);color:var(--t3);font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .18s;letter-spacing:.2px}
+.tab:hover{border-color:var(--b2);color:var(--t2)}
+.tab.active{background:var(--g3);border-color:rgba(0,245,168,.3);color:var(--g)}
+.tab-ico{width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* ─── STATS GRID ─── */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
+@media(max-width:560px){.stats{grid-template-columns:repeat(3,1fr)}}
+.stat{background:var(--s1);border:1px solid var(--b1);border-radius:var(--radius);padding:10px 8px;text-align:center;transition:all .2s;cursor:default}
+.stat:hover{border-color:var(--b2);transform:translateY(-1px)}
+.stat-n{font-size:22px;font-weight:800;line-height:1;font-family:var(--mono)}
+.stat-l{font-size:9px;color:var(--t3);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+
+/* ─── LOADER ─── */
+.loader-wrap{display:flex;flex-direction:column;align-items:center;padding:64px 0;gap:14px}
+.loader{width:34px;height:34px;border:2.5px solid rgba(255,255,255,.06);border-top-color:var(--g);border-radius:50%;animation:spin 1s linear infinite}
+.prog-track{width:160px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--c));border-radius:2px;transition:width .3s}
+
+/* ─── EMPTY ─── */
+.empty{display:none;flex-direction:column;align-items:center;padding:64px 20px;gap:10px;text-align:center}
+.empty svg{opacity:.25}
+
+/* ─── JOB CARDS ─── */
+.jobs{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all .22s;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,245,168,.03),transparent 50%);opacity:0;transition:opacity .22s}
+.card:hover{border-color:rgba(0,245,168,.25);transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,0,0,.45)}
+.card:hover::after{opacity:1}
+.card.is-new{border-color:rgba(0,245,168,.22)}
+.card.is-new::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--g),var(--c),transparent)}
+.card-urgent{border-color:rgba(255,77,109,.25)!important}
+.card-urgent::before{background:linear-gradient(90deg,var(--r),var(--a),transparent)!important}
+
+/* ─── CATEGORY ICONS (glass app icon style) ─── */
+.cat-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.cat-icon svg{width:22px;height:22px;position:relative;z-index:1}
+.ci-govt{background:linear-gradient(145deg,rgba(59,130,246,.15),rgba(59,130,246,.05));border:1px solid rgba(59,130,246,.25)}
+.ci-govt svg{stroke:#5b9bf5;fill:none;stroke-width:1.6}
+.ci-bank{background:linear-gradient(145deg,rgba(0,245,168,.12),rgba(0,245,168,.04));border:1px solid rgba(0,245,168,.2)}
+.ci-bank svg{stroke:var(--g);fill:none;stroke-width:1.6}
+.ci-private{background:linear-gradient(145deg,rgba(157,127,255,.12),rgba(157,127,255,.04));border:1px solid rgba(157,127,255,.2)}
+.ci-private svg{stroke:var(--p);fill:none;stroke-width:1.6}
+.ci-fresher{background:linear-gradient(145deg,rgba(245,184,0,.12),rgba(245,184,0,.04));border:1px solid rgba(245,184,0,.2)}
+.ci-fresher svg{stroke:var(--a);fill:none;stroke-width:1.6}
+.ci-it{background:linear-gradient(145deg,rgba(0,212,245,.12),rgba(0,212,245,.04));border:1px solid rgba(0,212,245,.2)}
+.ci-it svg{stroke:var(--c);fill:none;stroke-width:1.6}
+.ci-saved{background:linear-gradient(145deg,rgba(255,124,42,.12),rgba(255,124,42,.04));border:1px solid rgba(255,124,42,.2)}
+.ci-saved svg{stroke:var(--o);fill:none;stroke-width:1.6}
+
+/* source chip */
+.source-chip{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;padding:1px 6px;border-radius:5px;font-family:var(--mono);letter-spacing:.2px}
+.sc-govt{background:rgba(59,130,246,.1);color:#5b9bf5;border:1px solid rgba(59,130,246,.2)}
+.sc-bank{background:rgba(0,245,168,.08);color:var(--g);border:1px solid rgba(0,245,168,.18)}
+.sc-private{background:rgba(157,127,255,.1);color:var(--p);border:1px solid rgba(157,127,255,.2)}
+.sc-adzuna{background:rgba(0,212,245,.1);color:var(--c);border:1px solid rgba(0,212,245,.2)}
+.sc-ibps{background:rgba(245,184,0,.1);color:var(--a);border:1px solid rgba(245,184,0,.2)}
+.sc-rapid{background:rgba(255,124,42,.1);color:var(--o);border:1px solid rgba(255,124,42,.2)}
+
+/* match bar */
+.match-track{width:48px;height:4px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
+.mf-g{background:linear-gradient(90deg,var(--g),var(--c))}
+.mf-a{background:linear-gradient(90deg,var(--a),#fbbf24)}
+.mf-m{background:var(--t3)}
+
+/* deadline pill */
+.deadline{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;font-family:var(--mono)}
+.dl-ok{background:var(--g3);color:var(--g);border:1px solid rgba(0,245,168,.15)}
+.dl-warn{background:var(--a2);color:var(--a);border:1px solid rgba(245,184,0,.2)}
+.dl-urgent{background:var(--r2);color:var(--r);border:1px solid rgba(255,77,109,.2);animation:pulse 1.2s infinite}
+
+/* app status tracker */
+.tracker{display:flex;gap:0;margin:12px 0}
+.track-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+.track-step::after{content:'';position:absolute;top:12px;left:50%;right:-50%;height:2px;background:var(--b2);z-index:0}
+.track-step:last-child::after{display:none}
+.track-dot{width:24px;height:24px;border-radius:50%;border:2px solid var(--b2);background:var(--s2);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:all .3s;font-size:10px}
+.track-dot.done{border-color:var(--g);background:var(--g3)}
+.track-dot.active{border-color:var(--a);background:var(--a2)}
+.track-dot.offer{border-color:var(--g);background:var(--g3)}
+.track-dot.rejected{border-color:var(--r);background:var(--r2)}
+.track-label{font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px;text-align:center}
+.track-step.done .track-label{color:var(--g)}
+.track-step.active .track-label{color:var(--a)}
+
+/* quick apply btn */
+.quick-apply{display:none;position:absolute;bottom:12px;right:14px;padding:5px 12px;border-radius:8px;background:linear-gradient(135deg,var(--g),var(--g2));color:#04120b;font-size:10px;font-weight:800;border:none;cursor:pointer;font-family:var(--font);transition:all .18s}
+.card:hover .quick-apply{display:flex;align-items:center;gap:4px}
+
+/* load more */
+.load-more{width:100%;margin-top:12px;height:44px;border-radius:var(--radius);background:var(--b1);border:1px solid var(--b1);color:var(--t2);font-family:var(--font);font-weight:700;font-size:12px;cursor:pointer;transition:all .18s;display:none}
+.load-more:hover{background:var(--b2);color:var(--t1)}
+
+/* ─── MODAL OVERLAY ─── */
+.overlay{position:fixed;inset:0;z-index:50;display:none;pointer-events:none}
+.overlay.open{display:block;pointer-events:all}
+.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78)}
+
+/* ─── JOB MODAL PANEL ─── */
+.mpanel{position:absolute;right:0;top:0;bottom:0;width:100%;max-width:560px;background:#080c14;border-left:1px solid var(--b2);overflow-y:auto;display:flex;flex-direction:column;pointer-events:all}
+.mhead{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--b1);position:sticky;top:0;background:rgba(8,12,20,.95);backdrop-filter:blur(16px);z-index:5;gap:8px}
+.mbody{padding:18px;flex:1}
+.mfoot{padding:14px 18px;border-top:1px solid var(--b1);background:rgba(8,12,20,.95);backdrop-filter:blur(16px);position:sticky;bottom:0;display:flex;flex-direction:column;gap:8px}
+
+/* modal elements */
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.dtile{background:var(--s2);border:1px solid var(--b1);border-radius:var(--radius-sm);padding:10px 12px;transition:border-color .2s}
+.dtile:hover{border-color:var(--b2)}
+.dtile-l{font-size:9px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.dtile-v{font-size:12px;font-weight:700;margin-top:3px;font-family:var(--mono)}
+.sec{font-size:10px;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--b1);display:flex;align-items:center;gap:6px}
+.sec::before{content:'';width:3px;height:14px;border-radius:2px;background:linear-gradient(var(--g),var(--c))}
+.desc-text{font-size:13px;color:rgba(237,242,250,.8);line-height:1.8}
+.req-chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:4px 10px;border-radius:7px;background:var(--b1);border:1px solid var(--b1);margin:3px;font-weight:600;transition:all .2s}
+.req-chip.matched{background:var(--g3);border-color:rgba(0,245,168,.25);color:var(--g)}
+.req-chip.matched::before{content:'✓';font-size:9px}
+
+/* apply steps */
+.step-list{display:flex;flex-direction:column;gap:6px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--radius-sm);transition:border-color .2s}
+.step:hover{border-color:var(--b2)}
+.step-n{width:22px;height:22px;border-radius:7px;background:var(--g3);color:var(--g);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono)}
+.step-body{font-size:12px;color:rgba(237,242,250,.8);line-height:1.55}
+.step-body strong{color:var(--t1)}
+.step-body .url{color:var(--c);font-family:var(--mono);font-size:11px}
+
+/* docs */
+.doc-list{display:flex;flex-wrap:wrap;gap:5px}
+.doc{display:flex;align-items:center;gap:4px;font-size:10px;padding:3px 9px;border-radius:6px;background:rgba(0,212,245,.07);border:1px solid rgba(0,212,245,.18);color:var(--c);font-weight:600}
+
+/* interview tips */
+.tip{display:flex;gap:8px;padding:9px 11px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--radius-sm);margin-bottom:5px}
+.tip-ico{font-size:14px;flex-shrink:0;line-height:1.4}
+.tip-text{font-size:11px;color:rgba(237,242,250,.75);line-height:1.5}
+
+/* cover letter */
+.cl-box{background:var(--s3);border:1px solid var(--b2);border-radius:var(--radius-sm);padding:12px;font-size:11px;color:rgba(237,242,250,.7);line-height:1.75;white-space:pre-wrap;max-height:180px;overflow-y:auto;font-family:var(--mono)}
+
+/* similar jobs */
+.sim-card{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;margin-bottom:5px}
+.sim-card:hover{border-color:rgba(0,245,168,.2);background:var(--s3)}
+
+/* action buttons */
+.abtn{height:46px;border-radius:var(--radius);border:none;cursor:pointer;font-family:var(--font);font-weight:700;font-size:12px;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:6px;width:100%}
+.abtn-apply{background:linear-gradient(135deg,var(--g),var(--g2));color:#04120b}
+.abtn-apply:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(0,245,168,.35)}
+.abtn-apply:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.abtn-tg{background:linear-gradient(135deg,#229ed9,#1a7bbf);color:#fff}
+.abtn-tg:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(34,158,217,.3)}
+.abtn-wa{background:linear-gradient(135deg,#25d366,#128c3e);color:#fff}
+.abtn-wa:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,211,102,.3)}
+.abtn-ghost{background:var(--b1);border:1px solid var(--b2);color:var(--t1)}
+.abtn-ghost:hover{background:var(--b2)}
+.applied-banner{display:flex;align-items:center;gap:8px;padding:11px;background:var(--g3);border:1px solid rgba(0,245,168,.2);border-radius:var(--radius-sm);font-size:12px;color:var(--g);font-weight:700}
+
+/* ─── SETTINGS ─── */
+.spanel{position:absolute;right:0;top:0;bottom:0;width:100%;max-width:420px;background:#080c14;border-left:1px solid var(--b2);overflow-y:auto;padding:18px}
+.sec-title{font-size:10px;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--b1)}
+.s-section{margin-bottom:22px}
+.flabel{font-size:10px;color:var(--t3);font-weight:700;margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.4px}
+.finput{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:var(--radius-sm);padding:9px 13px;color:var(--t1);font-family:var(--font);font-size:12px;transition:all .18s}
+.finput:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(0,245,168,.1)}
+.finput::placeholder{color:var(--t3)}
+.fgroup{margin-bottom:9px}
+.trow{display:flex;align-items:center;justify-content:space-between;padding:9px 0}
+.trow-label{font-size:12px;font-weight:600}
+.trow-sub{font-size:10px;color:var(--t3);margin-top:1px}
+.tsw{width:44px;height:22px;border-radius:11px;background:var(--s3);border:1px solid var(--b2);cursor:pointer;position:relative;transition:all .25s;flex-shrink:0}
+.tsw.on{background:rgba(0,245,168,.2);border-color:rgba(0,245,168,.4)}
+.tsw-thumb{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--t3);transition:all .25s}
+.tsw.on .tsw-thumb{left:22px;background:var(--g)}
+.info-box{background:rgba(0,245,168,.05);border:1px solid rgba(0,245,168,.12);border-radius:var(--radius-sm);padding:11px 13px;font-size:11px;color:rgba(237,242,250,.75);line-height:1.65;margin-bottom:10px}
+.info-box strong{color:var(--g)}
+.info-box ol,.info-box ul{padding-left:15px;margin-top:4px}
+.info-box li{margin-bottom:2px}
+
+/* ─── TRACKER VIEW ─── */
+#trackerView{display:none}
+.trkr-card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--radius);padding:12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s}
+.trkr-card:hover{border-color:var(--b2)}
+.status-select{background:var(--s2);border:1px solid var(--b2);border-radius:7px;padding:4px 8px;color:var(--t1);font-family:var(--font);font-size:10px;font-weight:700;cursor:pointer;appearance:none;-webkit-appearance:none}
+
+/* ─── TOAST ─── */
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:99;display:none;pointer-events:none}
+.toast-inner{background:var(--s3);border:1px solid var(--b3);padding:9px 18px;border-radius:var(--radius-sm);font-size:12px;font-weight:700;box-shadow:var(--shadow-lg);white-space:nowrap;font-family:var(--mono)}
+#newAlert{position:fixed;top:66px;left:50%;transform:translateX(-50%);z-index:60;display:none}
+.new-alert-inner{background:linear-gradient(135deg,var(--g),var(--c));color:#04120b;padding:9px 18px;border-radius:var(--radius-sm);font-size:12px;font-weight:800;font-family:var(--mono);display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,245,168,.35)}
+#notifBanner{display:none;align-items:center;justify-content:center;gap:10px;padding:9px 16px;background:linear-gradient(135deg,rgba(0,245,168,.15),rgba(0,212,245,.15));border-bottom:1px solid rgba(0,245,168,.2);font-size:11px;font-weight:700;color:var(--t1)}
+
+/* ─── SCROLLABLE TABS for tracker ─── */
+.main-tabs{display:flex;gap:5px;margin-bottom:10px}
+.mtab{padding:7px 16px;border-radius:var(--radius-sm);border:1px solid var(--b1);background:rgba(11,16,24,.6);color:var(--t3);font-size:11px;font-weight:800;cursor:pointer;transition:all .18s;white-space:nowrap;letter-spacing:.2px}
+.mtab:hover{color:var(--t2);border-color:var(--b2)}
+.mtab.active{background:var(--g3);border-color:rgba(0,245,168,.3);color:var(--g)}
+</style>
+</head>
+<body>
+
+<!-- Notification Banner -->
+<div id="notifBanner">
+  <span>🔔 Get instant job alerts</span>
+  <button onclick="enableNotifs()" style="background:var(--g);border:none;color:#04120b;padding:4px 12px;border-radius:6px;font-weight:800;cursor:pointer;font-family:var(--font);font-size:11px">Enable</button>
+  <button onclick="document.getElementById('notifBanner').style.display='none'" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:14px;line-height:1">✕</button>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="logo-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 5h5v10.5c0 1.8-1.2 2.9-2.8 2.9-1.5 0-2.5-.8-3-1.9" stroke="url(#lga)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 5v14" stroke="url(#lgb)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M13 5h3.4c1.4 0 2.6 1.1 2.6 2.5s-1.2 2.5-2.6 2.5H13" stroke="url(#lgb)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 10h3.8c1.6 0 2.9 1.2 2.9 2.8s-1.3 2.8-2.9 2.8H13" stroke="url(#lga)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="20" cy="4.5" r="1.8" fill="var(--g)"/>
+          <defs>
+            <linearGradient id="lga" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="var(--g)"/><stop offset="1" stop-color="var(--c)"/></linearGradient>
+            <linearGradient id="lgb" x1="13" y1="4" x2="21" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#34d399"/><stop offset="1" stop-color="var(--c)"/></linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-title t-head"><span class="gtext">JobBot</span><span style="font-weight:400;opacity:.5"> Pro</span></div>
+        <div class="logo-sub"><span class="live-dot"></span> Live · Agartala</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <span id="lastLbl" style="font-size:9px;color:var(--t3);font-family:var(--mono);display:none"></span>
+      <span id="newBadge" class="badge badge-red badge-new-anim" style="display:none">0 new</span>
+      <span id="ctr" class="counter">Loading…</span>
+      <button onclick="refreshJobs()" class="ibtn" title="Refresh" id="refreshBtn">
+        <svg id="rIco" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
+      <button onclick="showView('tracker')" class="ibtn" title="Application Tracker">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </button>
+      <button onclick="openSettings()" class="ibtn" title="Settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Status Bar -->
+<div class="status">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span id="autoLbl" style="display:flex;align-items:center;gap:4px"><span class="live-dot"></span>Auto ON</span>
+    <span id="apiBadge" class="badge badge-green">● Live API</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <span id="nxtUpd" style="font-family:var(--mono)">Next: 5:00</span>
+    <span class="status-link" onclick="toggleAuto()" id="autoToggle">Pause</span>
+  </div>
+</div>
+<div style="max-width:1040px;margin:0 auto;padding:0 16px;position:relative;z-index:1">
+  <div id="limitBanner" style="display:none;background:rgba(245,184,0,.06);border:1px solid rgba(245,184,0,.18);border-radius:var(--radius-sm);padding:8px 12px;font-size:11px;color:var(--a);margin-bottom:6px;display:none;align-items:center;gap:6px">
+    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    API limit reached. <span onclick="openSettings()" style="color:var(--c);cursor:pointer;text-decoration:underline">Add Adzuna key →</span>
+  </div>
+</div>
+
+<!-- Main Wrap -->
+<div class="wrap">
+
+  <!-- Main View Tabs -->
+  <div class="main-tabs">
+    <button class="mtab active" onclick="showView('jobs',this)">🔍 Jobs</button>
+    <button class="mtab" onclick="showView('tracker',this)">📊 Tracker</button>
+  </div>
+
+  <!-- JOBS VIEW -->
+  <div id="jobsView">
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <div class="search-wrapper">
+        <svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="srch" class="search-input" type="text" placeholder="Search jobs, skills, companies…" oninput="liveSearch()" onkeydown="if(event.key==='Enter')liveSearch()">
+      </div>
+      <button class="btn btn-primary" onclick="liveSearch()">
+        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search
+      </button>
+      <button class="btn btn-icon" onclick="clearSearch()" title="Clear">
+        <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-row">
+      <span class="filter-label">Filter:</span>
+      <select class="filter-select" id="salFilter" onchange="applyFilters()">
+        <option value="all">All Salaries</option>
+        <option value="0">Under ₹15,000</option>
+        <option value="15000">₹15k – ₹25k</option>
+        <option value="25000">₹25k – ₹40k</option>
+        <option value="40000">Above ₹40k</option>
+      </select>
+      <select class="filter-select" id="sortFilter" onchange="applyFilters()">
+        <option value="match">Best Match</option>
+        <option value="new">Newest First</option>
+        <option value="salary_high">Salary ↑</option>
+        <option value="deadline">Deadline Soon</option>
+      </select>
+      <select class="filter-select" id="applyFilter" onchange="applyFilters()">
+        <option value="all">All Jobs</option>
+        <option value="not_applied">Not Applied</option>
+        <option value="applied">Applied</option>
+      </select>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="catTabs">
+      <button id="tab-all" class="tab active" onclick="filterCat('all',this)">
+        <div class="tab-ico ci-saved"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>All
+      </button>
+      <button id="tab-government" class="tab" onclick="filterCat('government',this)">
+        <div class="tab-ico ci-govt"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>Govt
+      </button>
+      <button id="tab-bank" class="tab" onclick="filterCat('bank',this)">
+        <div class="tab-ico ci-bank"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/></svg></div>Bank
+      </button>
+      <button id="tab-private" class="tab" onclick="filterCat('private',this)">
+        <div class="tab-ico ci-private"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>Private
+      </button>
+      <button id="tab-fresher" class="tab" onclick="filterCat('fresher',this)">
+        <div class="tab-ico ci-fresher"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>Freshers
+      </button>
+      <button id="tab-it" class="tab" onclick="filterCat('it',this)">
+        <div class="tab-ico ci-it"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>IT
+      </button>
+      <button id="tab-saved" class="tab" onclick="filterCat('saved',this)">
+        <div class="tab-ico ci-saved"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>Saved
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat"><div class="stat-n" id="sTotal">0</div><div class="stat-l">Total</div></div>
+      <div class="stat"><div class="stat-n" id="sNew" style="color:var(--g)">0</div><div class="stat-l">New</div></div>
+      <div class="stat"><div class="stat-n" id="sSaved" style="color:var(--a)">0</div><div class="stat-l">Saved</div></div>
+      <div class="stat"><div class="stat-n" id="sMatch" style="color:var(--c)">0</div><div class="stat-l">≥85% Match</div></div>
+      <div class="stat"><div class="stat-n" id="sApplied" style="color:var(--p)">0</div><div class="stat-l">Applied</div></div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loaderW" class="loader-wrap">
+      <div class="loader"></div>
+      <div style="color:var(--t3);font-size:12px;font-family:var(--mono)" id="loaderTxt">Fetching Agartala jobs…</div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+
+    <!-- Empty -->
+    <div id="emptyW" class="empty">
+      <svg width="52" height="52" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div style="font-size:16px;font-weight:800;margin-top:4px">No Jobs Found</div>
+      <div style="color:var(--t3);font-size:12px">Try different keywords or clear filters</div>
+      <button class="btn btn-primary" style="margin-top:10px;height:40px;font-size:12px" onclick="clearSearch()">Clear Search</button>
+    </div>
+
+    <!-- List -->
+    <div id="jobList" class="jobs" style="display:none"></div>
+    <button id="loadMoreBtn" class="load-more" onclick="loadMore()">Load More Jobs ↓</button>
+  </div>
+
+  <!-- TRACKER VIEW -->
+  <div id="trackerView" style="display:none">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div style="font-size:16px;font-weight:800">📊 Application Tracker</div>
+      <select id="trackerFilter" class="filter-select" onchange="renderTracker()">
+        <option value="all">All Statuses</option>
+        <option value="saved">Saved</option>
+        <option value="applied">Applied</option>
+        <option value="interview">Interview</option>
+        <option value="offer">Offer</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <div id="trackerList"></div>
+    <div id="trackerEmpty" style="display:none;text-align:center;padding:48px 0;color:var(--t3);font-size:13px">
+      <div style="font-size:36px;margin-bottom:8px">📋</div>
+      <div>No tracked jobs yet. Save or apply to jobs to track them here.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======== JOB MODAL ======== -->
+<div id="jobModal" class="overlay">
+  <div class="backdrop" onclick="closeModal()"></div>
+  <div class="mpanel slide-in" id="mPanel">
+    <div class="mhead">
+      <button onclick="closeModal()" style="background:var(--b1);border:1px solid var(--b2);border-radius:8px;padding:5px 12px;color:var(--t2);cursor:pointer;font-family:var(--font);font-size:11px;font-weight:700;display:flex;align-items:center;gap:4px">
+        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back
+      </button>
+      <div style="display:flex;gap:6px">
+        <button onclick="shareJobWA(currentId)" class="ibtn" title="WhatsApp Share" style="background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.2)">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:#25d366;width:15px;height:15px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </button>
+        <button onclick="shareJob(currentId)" class="ibtn" title="Share">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button onclick="toggleSave(currentId)" id="mSaveBtn" class="ibtn" title="Save">
+          <svg id="mSaveIco" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mbody" id="mBody"></div>
+    <div class="mfoot" id="mFoot"></div>
+  </div>
+</div>
+
+<!-- ======== SETTINGS MODAL ======== -->
+<div id="settingsModal" class="overlay">
+  <div class="backdrop" onclick="closeSettings()"></div>
+  <div class="spanel slide-in">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="font-size:16px;font-weight:800">⚙️ Settings</div>
+      <button onclick="closeSettings()" class="ibtn">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="s-section">
+      <div class="sec-title">🌐 API Source</div>
+      <div class="info-box"><strong>✅ Free — Adzuna (250 calls/month)</strong>
+        <ol><li>Go to <strong>developer.adzuna.com</strong></li><li>Sign up → Create App</li><li>Copy App ID + App Key below</li></ol>
+        <a href="https://developer.adzuna.com" target="_blank" style="display:inline-block;margin-top:7px;background:rgba(245,184,0,.12);border:1px solid rgba(245,184,0,.25);color:var(--a);padding:4px 10px;border-radius:6px;font-size:10px;font-weight:800;font-family:var(--mono);text-decoration:none">🔗 Get Free Key →</a>
+      </div>
+      <div style="background:var(--g3);border:1px solid rgba(0,245,168,.2);border-radius:8px;padding:8px 12px;font-size:10px;color:var(--g);font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:10px">
+        <span class="live-dot"></span>Built-in keys active — live jobs loading
+      </div>
+      <div class="fgroup"><label class="flabel">Adzuna App ID</label><input id="fAzId" class="finput" placeholder="e.g. 81f82984"></div>
+      <div class="fgroup"><label class="flabel">Adzuna App Key</label><input id="fAzKey" class="finput" type="password" placeholder="App Key"></div>
+      <button onclick="testAdzuna()" style="width:100%;height:38px;border-radius:8px;background:rgba(245,184,0,.1);border:1px solid rgba(245,184,0,.25);color:var(--a);font-family:var(--font);font-weight:700;font-size:11px;cursor:pointer;margin-bottom:8px">🧪 Test Connection</button>
+      <div class="fgroup" style="border-top:1px solid var(--b1);padding-top:10px;margin-top:4px"><label class="flabel">RapidAPI Key (JSearch)</label><input id="fRapid" class="finput" type="password" placeholder="RapidAPI Key"></div>
+      <div class="trow">
+        <div><div class="trow-label">Smart Caching</div><div class="trow-sub">Cache 30 min to save API calls</div></div>
+        <div class="tsw on" id="cSw" onclick="toggleCache()"><div class="tsw-thumb"></div></div>
+      </div>
+      <div style="font-size:10px;color:var(--t3);margin-top:4px"><span onclick="clearCache()" style="color:var(--r);cursor:pointer;font-weight:700">🗑️ Clear cache</span></div>
+    </div>
+
+    <div class="s-section">
+      <div class="sec-title">🔄 Auto-Update</div>
+      <div class="trow">
+        <div><div class="trow-label">Auto-Update</div><div class="trow-sub">Fetch new jobs automatically</div></div>
+        <div class="tsw on" id="aSw" onclick="toggleAuto()"><div class="tsw-thumb"></div></div>
+      </div>
+      <div class="fgroup"><label class="flabel">Interval</label>
+        <select id="fInterval" class="finput" onchange="saveInterval()" style="cursor:pointer">
+          <option value="5" selected>Every 5 minutes</option><option value="10">Every 10 minutes</option>
+          <option value="30">Every 30 minutes</option><option value="60">Every hour</option>
+        </select>
+      </div>
+      <div class="trow">
+        <div><div class="trow-label">Browser Notifications</div><div class="trow-sub">Alert when new jobs found</div></div>
+        <button onclick="enableNotifs()" id="notifBtn" style="background:var(--b1);border:1px solid var(--b2);border-radius:7px;padding:4px 10px;color:var(--t2);cursor:pointer;font-size:10px;font-weight:800;font-family:var(--mono)">Enable</button>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="sec-title">👤 Profile</div>
+      <div class="fgroup"><label class="flabel">Full Name</label><input id="fName" class="finput" placeholder="Your Name"></div>
+      <div class="fgroup"><label class="flabel">Email</label><input id="fEmail" class="finput" type="email" placeholder="you@email.com"></div>
+      <div class="fgroup"><label class="flabel">Phone</label><input id="fPhone" class="finput" type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="fgroup"><label class="flabel">Skills (comma separated)</label><input id="fSkills" class="finput" placeholder="Tally, MS Office, Typing, English…"></div>
+      <div class="fgroup"><label class="flabel">Qualification</label><input id="fQual" class="finput" placeholder="e.g. B.Com, 12th Pass, BCA"></div>
+      <div class="fgroup"><label class="flabel">Experience</label><input id="fExp" class="finput" placeholder="e.g. Fresher, 2 years"></div>
+    </div>
+
+    <div class="s-section">
+      <div class="sec-title">📱 Telegram Alerts</div>
+      <div class="info-box"><strong>Setup:</strong><ol><li>@BotFather → /newbot → Token</li><li>@userinfobot → Chat ID</li></ol></div>
+      <div class="fgroup"><label class="flabel">Bot Token</label><input id="fTgT" class="finput" type="password" placeholder="Bot Token"></div>
+      <div class="fgroup"><label class="flabel">Chat ID</label><input id="fTgC" class="finput" placeholder="Your Chat ID"></div>
+      <button onclick="testTg()" style="width:100%;height:38px;border-radius:8px;background:rgba(34,158,217,.1);border:1px solid rgba(34,158,217,.25);color:#229ed9;font-family:var(--font);font-weight:700;font-size:11px;cursor:pointer">📨 Test Telegram</button>
+    </div>
+
+    <button onclick="saveSettings()" class="abtn abtn-apply" style="font-size:13px;margin-top:4px">💾 Save Settings</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast"><div class="toast-inner" id="toastMsg"></div></div>
+<div id="newAlert"><div class="new-alert-inner">🎉 <span id="newAlertTxt">0 new jobs!</span><button onclick="document.getElementById('newAlert').style.display='none'" style="background:rgba(0,0,0,.2);border:none;color:#04120b;cursor:pointer;border-radius:4px;padding:1px 6px;font-size:10px;margin-left:4px">✕</button></div></div>
+
+<script>
+// ═══════════ CONFIG ═══════════
+const AZ_ID = '81f82984', AZ_KEY = 'ba97a69da22bb79d699978dc9c234eb9';
+const PER_PAGE = 12, CACHE_KEY = 'jbp_v3_cache', CACHE_DUR = 30*60*1000;
+
+// ═══════════ STATE ═══════════
+let allJobs=[], filtered=[];
+let saved=JSON.parse(localStorage.getItem('jbp_saved')||'[]');
+let applied=JSON.parse(localStorage.getItem('jbp_applied')||'[]');
+let tracked=JSON.parse(localStorage.getItem('jbp_tracked')||'{}');
+let profile=JSON.parse(localStorage.getItem('jbp_profile')||'{}');
+let sett=JSON.parse(localStorage.getItem('jbp_sett')||'{"auto":true,"interval":5,"cache":true}');
+let cat='all', page=1, currentId=null, autoTm=null, cntTm=null, nxtSecs=0, _tt=null;
+
+// ═══════════ JOB DATA ═══════════
+const JOBS = [
+  // GOVERNMENT
+  {id:'g01',cat:'government',src:'tripura.gov.in',srcCls:'sc-govt',
+   title:'Office Assistant',company:'Tripura Secretariat',location:'Agartala, West Tripura',
+   salary:'₹21,700–₹69,100/mo',salNum:21700,deadline:'15 days',dlDays:15,posted:'Today',match:88,isNew:true,
+   applyMode:'offline',applyContact:'Personnel Dept, Tripura Secretariat, Agartala 799001',
+   desc:'Join the Tripura Secretariat as an Office Assistant in state administration. You will manage official correspondence, maintain file systems, and coordinate between government departments. Government employment with pension, medical benefits, housing allowance, and all Leave Travel Concession perks under the 7th Pay Commission.',
+   resp:['Manage official files, correspondence, and records','Draft official letters and departmental reports','Coordinate inter-department communication','Data entry into government MIS systems','Attend to public queries and direct to relevant departments','Assist senior officers in daily administrative work'],
+   req:['12th Pass (any stream)','MS Office / Computer Certificate','Typing minimum 30 WPM','Bengali or Kokborok language preferred','Age 18–40 years'],
+   docs:['10th & 12th Marksheets','Computer Certificate','Typing Certificate','2 Passport Photos','Caste Certificate (if SC/ST/OBC)','Domicile Certificate'],
+   tips:['Govt jobs require offline application forms — collect from Secretariat office','Ensure all documents are self-attested','Include a handwritten application letter','Submit before deadline — counters close at 5 PM'],
+   similar:['g02','g03','g05']},
+  {id:'g02',cat:'government',src:'ecourts.gov.in',srcCls:'sc-govt',
+   title:'Clerk cum Computer Operator',company:'District Court Agartala',location:'Agartala, West Tripura',
+   salary:'₹19,900–₹63,200/mo',salNum:19900,deadline:'20 days',dlDays:20,posted:'2 days ago',match:92,isNew:true,
+   applyMode:'offline',applyContact:'Office of the District Judge, Agartala, West Tripura 799001',
+   desc:'District Court Agartala is recruiting Clerk cum Computer Operators to manage judicial records and court administration. You will maintain case files, update the National Judicial Data Grid (NJDG), prepare cause lists, and support judicial officers. Prestigious judicial service posting with excellent pay, pension, and career growth within the Tripura judiciary.',
+   resp:['Enter and manage case records in court management system','Prepare daily cause lists and hearing schedules','Issue certified copies of orders and judgements','Document scanning and digital archiving','Assist in courtroom administration and record keeping','Maintain cause registers and judgement registers'],
+   req:['Graduate in any discipline','Computer Diploma or Certificate Course','Typing 35 WPM (English or Bengali)','Knowledge of court procedures preferred','Age 18–40 years'],
+   docs:['Graduation Certificate','Computer Certificate','Typing Certificate','Experience letter (if any)','2 Photos','Identity Proof (Aadhaar/Voter ID)'],
+   tips:['Apply well before deadline for district courts — high competition','Bring originals AND photocopies of all documents','Attire: formal shirt/kurta for submission visit','Note down your application receipt number carefully'],
+   similar:['g01','g05','g06']},
+  {id:'g03',cat:'government',src:'tribal.nic.in',srcCls:'sc-govt',
+   title:'Data Entry Operator',company:'Tribal Welfare Dept, Tripura',location:'Agartala, Tripura',
+   salary:'₹18,000–₹25,000/mo',salNum:18000,deadline:'10 days',dlDays:10,posted:'1 day ago',match:85,isNew:true,
+   applyMode:'offline',applyContact:'Directorate of Tribal Welfare, New Capital Complex, Agartala',
+   desc:'The Tribal Welfare Department of Tripura is digitising beneficiary data for government schemes and requires a skilled Data Entry Operator. You will handle large datasets for tribal scholarships, land records, and social security programmes. Work directly contributes to welfare of indigenous tribal communities of Tripura.',
+   resp:['Enter beneficiary data into government welfare database','Verify and update existing records for scheme eligibility','Generate MIS reports and summaries','Digitise physical documents via scanning','Maintain data backup and confidentiality protocols','Coordinate with field officers for data verification'],
+   req:['12th Pass minimum','Typing 35 WPM (mandatory)','Certificate in Computer Applications','Bengali and Kokborok language preferred','Age 18–40 years'],
+   docs:['12th Marksheet','Computer Certificate','Typing Certificate','2 Photos','Aadhaar Card','Tribe Certificate if ST'],
+   tips:['This role is closed for non-Tripura domicile holders — check eligibility','Get your Typing Certificate from a recognised institute first','Kokborok language knowledge is a strong advantage'],
+   similar:['g01','g02','b06']},
+  {id:'g04',cat:'government',src:'bsnl.co.in',srcCls:'sc-govt',
+   title:'Junior Assistant',company:'BSNL Agartala',location:'Agartala, Tripura',
+   salary:'₹21,700–₹69,100/mo',salNum:21700,deadline:'30 days',dlDays:30,posted:'1 week ago',match:82,
+   applyMode:'online',applyUrl:'https://bsnl.co.in/careers',applyContact:'bsnl.co.in/careers',
+   desc:'BSNL Agartala Telecom Circle is inviting applications for Junior Assistant. You will handle administrative support, customer coordination, billing assistance, and documentation for telecom operations. BSNL offers central government equivalent pay scales, DA, medical facilities, and job security. Agartala circle office is the telecom hub for entire North-East region.',
+   resp:['Handle administrative correspondence and office records','Assist in billing and payment processing','Customer service coordination for telecom issues','Manage official registers and procurement files','Support tender processing documentation','Liaison with field teams on circuit operations'],
+   req:['12th Pass (Science or Commerce preferred)','MS Office and internet skills','Basic telecom knowledge helpful','Local language proficiency','Age 18–35 years'],
+   docs:['12th Certificate','Computer Certificate','Identity Proof','2 Photos','Category Certificate if applicable'],
+   tips:['BSNL recruitment goes through official portal — bookmark it','Central government job equivalent benefits make this very competitive','Apply before portal closes — high traffic on last days'],
+   similar:['g01','g02','g05']},
+  {id:'g05',cat:'government',src:'ssc.gov.in',srcCls:'sc-govt',
+   title:'LDC – Lower Division Clerk',company:'Income Tax Department',location:'Agartala, Tripura',
+   salary:'₹19,900–₹63,200/mo',salNum:19900,deadline:'21 days',dlDays:21,posted:'3 days ago',match:84,
+   applyMode:'online',applyUrl:'https://ssc.gov.in',applyContact:'ssc.gov.in (SSC CHSL)',
+   desc:'Income Tax Department NER Region is hiring Lower Division Clerks for their Agartala office via SSC CHSL. LDCs handle file movement, dak, correspondence drafting, data entry of returns, and administrative support to ITO officers. Central government pay with HRA, TA, medical, and structured career promotions through DPC.',
+   resp:['Handle movement of files and outward dak','Draft correspondence and official noting','Data entry of tax assessments and challans','Maintain departmental registers and records','Process applications and assist ITO officers','Record keeping of past cases and circulars'],
+   req:['12th Pass from recognised board','Typing 35 WPM English / 30 WPM Hindi','Computer proficiency mandatory','SSC CHSL qualification required','Age 18–27 years (relaxation for reserved categories)'],
+   docs:['SSC CHSL Scorecard','12th Marksheet','Typing Certificate','2 Photos','DOB Proof','Category Certificate'],
+   tips:['SSC CHSL is the gateway — prepare for Tier 1 and 2 exams','Income Tax posting in NE region has lower competition than metro centres','English typing test is crucial — practice daily to reach 35 WPM+'],
+   similar:['g02','g06','g07']},
+  {id:'g06',cat:'government',src:'hctripura.gov.in',srcCls:'sc-govt',
+   title:'Stenographer Grade III',company:'High Court of Tripura',location:'Agartala, Tripura',
+   salary:'₹25,500–₹81,100/mo',salNum:25500,deadline:'25 days',dlDays:25,posted:'1 week ago',match:75,
+   applyMode:'offline',applyContact:'Registrar General, High Court of Tripura, Agartala 799010',
+   desc:'High Court of Tripura is recruiting Stenographers for court support roles in Agartala. You will take dictation at 80 WPM shorthand, transcribe judgements, manage judge schedules, and handle confidential judicial correspondence. One of the most prestigious non-judicial government positions in the state with excellent salary and career prospects.',
+   resp:['Take shorthand dictation from Judges and officers at 80 WPM','Transcribe and type judgements, orders, and notes accurately','Manage judge\'s schedule, appointments, and correspondence','Maintain confidentiality of court proceedings','Handle urgent transcription and photocopying tasks','Manage filing and record room for judge\'s chamber'],
+   req:['12th Pass minimum','Shorthand 80 WPM English (mandatory)','Typing 40 WPM English','Computer proficiency required','Age 18–36 years'],
+   docs:['12th Certificate','Shorthand Speed Certificate (80 WPM)','Typing Speed Certificate (40 WPM)','2 Photos','Identity Proof','Caste Certificate if applicable'],
+   tips:['Shorthand is rare — practice Pitman shorthand daily for 80 WPM','High Court posting means job for life — competition is intense','Take a certified shorthand speed test certificate before applying'],
+   similar:['g01','g02','g05']},
+  {id:'g07',cat:'government',src:'ssc.gov.in',srcCls:'sc-govt',
+   title:'Multi Tasking Staff (MTS)',company:'CPWD Agartala',location:'Agartala, Tripura',
+   salary:'₹18,000–₹56,900/mo',salNum:18000,deadline:'20 days',dlDays:20,posted:'5 days ago',match:70,
+   applyMode:'online',applyUrl:'https://ssc.gov.in',applyContact:'ssc.gov.in (SSC MTS)',
+   desc:'CPWD Agartala recruits Multi Tasking Staff for general support duties via SSC MTS. MTS personnel assist in file movement, office upkeep, running errands, and light field work at the Agartala Sub-Division. Central government 7th Pay Commission salary, pension, and annual increments apply. Ideal first government job with minimum qualification.',
+   resp:['Carry and deliver files within and between offices','Assist in loading, unloading, and store management','Maintain general cleanliness of office premises','Operate basic office equipment (photocopier, scanner)','Run official errands as directed','Support record room and document handling'],
+   req:['10th Pass (Matriculation)','Physical fitness — ability to walk and carry loads','Tripura domicile preferred','SSC MTS qualification','Age 18–25 years'],
+   docs:['10th Marksheet','SSC MTS Scorecard','DOB Proof','Identity Proof','2 Photos','Category Certificate'],
+   tips:['SSC MTS is the easiest central govt exam — 10th pass syllabus','CPWD posting in Agartala is comfortable compared to remote locations','Apply as early as possible — SSC portals get very slow near deadline'],
+   similar:['g01','g05']},
+  {id:'g08',cat:'government',src:'tripuraforest.gov.in',srcCls:'sc-govt',
+   title:'Forest Guard',company:'Tripura Forest Department',location:'Agartala, Tripura',
+   salary:'₹21,700–₹69,100/mo',salNum:21700,deadline:'30 days',dlDays:30,posted:'2 days ago',match:72,isNew:true,
+   applyMode:'offline',applyContact:'Principal Chief Conservator of Forests, Aranya Bhavan, Agartala',
+   desc:'Tripura Forest Department is recruiting Forest Guards for wildlife conservation and protection duties. You will patrol forest beats, prevent illegal logging and poaching, assist in plantation drives, and protect wildlife of Tripura\'s rich biodiversity. Field work role with government pay, housing at forest stations, and immense job satisfaction working with nature.',
+   resp:['Patrol assigned forest beats to prevent illegal encroachment','Prevent poaching and illegal tree felling; write reports','Participate in afforestation and plantation drives','Maintain beat register, patrol diary, and wildlife logs','Assist senior Forest Officers during field inspections','Engage local communities in conservation awareness programmes'],
+   req:['12th Pass (Science preferred)','Height: 163 cm Male / 150 cm Female','Must clear Physical Efficiency Test','Knowledge of local flora and fauna helpful','Age 18–30 years'],
+   docs:['12th Marksheet','Physical Fitness Certificate','Domicile Certificate','2 Photos','Caste Certificate if applicable'],
+   tips:['Physical fitness test includes 1.6 km run, long jump, and high jump','Science background helps in interview for forest guard roles','Start morning jogging now if you plan to appear for PET'],
+   similar:['g07','g01']},
+
+  // BANK
+  {id:'b01',cat:'bank',src:'tscbank.in',srcCls:'sc-bank',
+   title:'Back Office Executive',company:'Tripura State Co-operative Bank',location:'Agartala, Tripura',
+   salary:'₹22,000–₹35,000/mo',salNum:22000,deadline:'25 days',dlDays:25,posted:'3 days ago',match:95,isNew:true,
+   applyMode:'online',applyUrl:'https://tscbank.in/recruitment',applyContact:'tscbank.in',
+   desc:'Tripura State Co-operative Bank, the apex cooperative financial institution of Tripura, is hiring Back Office Executives for Agartala headquarters. You will operate core banking software, process deposits and loans, reconcile accounts, and support branch operations. TSCB offers government-equivalent stability, PF, gratuity, and a professional banking environment in the state capital.',
+   resp:['Operate CBS (Core Banking Software) for account processing','Process loan applications, deposits, and withdrawals','Daily account reconciliation and transaction verification','Verify KYC documents and maintain customer records','Generate MIS reports for management and RBI compliance','Support RTGS/NEFT processing and clearing operations'],
+   req:['Graduate in Commerce, Arts, or Science','MS Office proficiency and computer skills','Good communication in Bengali and English','IBPS Clerk score preferred','Age 21–35 years'],
+   docs:['Degree Certificate','Computer Certificate','Identity Proof (Aadhaar)','2 Photos','Bank Account Details','IBPS Scorecard if available'],
+   tips:['TSCB is a very stable cooperative bank — lower competition than SBI/nationalised banks','Knowledge of CBS software (Finacle or similar) gives you an edge','Dress formally for interview — banking sector values professional appearance'],
+   similar:['b02','b03','b05']},
+  {id:'b02',cat:'bank',src:'sbi.co.in',srcCls:'sc-bank',
+   title:'Computer Operator',company:'State Bank of India',location:'Agartala Main Branch, Tripura',
+   salary:'₹20,000–₹32,000/mo',salNum:20000,deadline:'14 days',dlDays:14,posted:'2 days ago',match:88,isNew:true,
+   applyMode:'online',applyUrl:'https://sbi.co.in/web/careers',applyContact:'sbi.co.in/careers',
+   desc:'SBI Agartala invites applications for Computer Operator at the main branch. This contractual role involves Finacle CBS operations, customer service support, passbook printing, and treasury assistance. SBI offers structured training, and top performers are considered for regular absorption. Experience with India\'s largest bank is an invaluable career asset.',
+   resp:['Operate SBI Finacle core banking system daily','Assist customers with account enquiries and fund transfers','Process passbook entries and ATM card management','Accurate transaction data entry and verification','Support vault management and cash counting','Generate daily MIS reports for branch manager'],
+   req:['Graduate in any stream','IBPS Clerk score or equivalent preferred','Typing 30 WPM minimum','MS Office and internet banking skills','Age 21–35 years','Good numerical accuracy'],
+   docs:['Graduation Certificate','IBPS Scorecard if available','Computer Certificate','2 Photos','Identity + Address Proof','Bank Account Proof'],
+   tips:['SBI prefers candidates with IBPS Clerk qualification','Learn Finacle basics via YouTube tutorials before interview','Agartala SBI main branch is a high-traffic branch — stress handling ability matters'],
+   similar:['b01','b03','b04']},
+  {id:'b03',cat:'bank',src:'ibps.in',srcCls:'sc-ibps',
+   title:'Clerk (IBPS CRP)',company:'Union Bank of India',location:'Agartala, Tripura',
+   salary:'₹19,900–₹47,920/mo + DA',salNum:19900,deadline:'30 days',dlDays:30,posted:'4 days ago',match:86,
+   applyMode:'online',applyUrl:'https://ibps.in',applyContact:'ibps.in (IBPS CRP Clerk)',
+   desc:'Union Bank of India is hiring Clerks for Agartala branch via IBPS CRP. Clerks provide frontline customer service — cash handling, account opening, NEFT processing, and documentation. JAIIB qualification earns additional increments. UBI offers IBPS-scale pay, defined pension, and structured promotions through DPC.',
+   resp:['Customer deposits, withdrawals, and account enquiries','Open new accounts and complete KYC documentation','Process NEFT, RTGS, and fund transfer requests','End-of-day cash balancing and report preparation','Cheque clearing, returns processing, and follow-up','Assist in audit preparation and RBI compliance'],
+   req:['Graduate (55% preferred)','IBPS CRP Clerk qualified (mandatory)','Computer certificate mandatory','Bengali language knowledge','Age 20–28 years per IBPS norms'],
+   docs:['IBPS Clerk Scorecard','Graduation Certificate','Character Certificate from institution','Caste Certificate if applicable','Disability Certificate if applicable','2 Photos + ID Proof'],
+   tips:['IBPS Clerk score cutoff in NE states is generally lower than metro centres','Agartala posting preferred by most — mention location preference in form','Local language Bengali is critical for customer-facing clerk role'],
+   similar:['b01','b04','b05']},
+  {id:'b04',cat:'bank',src:'bankofbaroda.in',srcCls:'sc-bank',
+   title:'Probationary Officer',company:'Bank of Baroda',location:'Agartala, Tripura',
+   salary:'₹36,000–₹63,840/mo + perks',salNum:36000,deadline:'20 days',dlDays:20,posted:'1 week ago',match:80,
+   applyMode:'online',applyUrl:'https://bankofbaroda.in/careers',applyContact:'bankofbaroda.in/careers',
+   desc:'Bank of Baroda\'s flagship Probationary Officer programme offers one of the best banking career launches available. Probation includes classroom training at Baroda Academy and branch postings across India. POs are groomed as future branch managers with pay scale JMG Scale I + DA, HRA, CCA, medical insurance, and relocation allowance.',
+   resp:['Manage assigned customer portfolio and achieve CASA targets','Conduct credit appraisals and KYC verification for loans','Handle customer complaints and ensure timely resolution','Achieve sales targets for deposits, loans, and insurance cross-sell','Lead branch operations during branch manager\'s absence','Ensure RBI compliance, audit readiness, and NPA management'],
+   req:['Graduate in any discipline (60% marks preferred)','IBPS PO CWE score (current cycle)','Strong analytical and communication skills','Computer proficiency — banking software awareness','Age 20–30 years','Leadership and target orientation preferred'],
+   docs:['IBPS PO Scorecard','Graduation Certificate + Marksheets','DOB Proof','2 Photos','NOC if currently employed','Category Certificate if applicable'],
+   tips:['Bank PO is a highly competitive exam — prepare 6+ months minimum','GD and interview round: prepare current banking affairs and RBI policies','Agartala posting in NE region often offered to NE state candidates — advantage for you'],
+   similar:['b01','b02','b03']},
+  {id:'b05',cat:'bank',src:'ibps.in',srcCls:'sc-ibps',
+   title:'Office Assistant (RDBS)',company:'Tripura Gramin Bank',location:'Agartala, Tripura',
+   salary:'₹18,000–₹31,500/mo + DA',salNum:18000,deadline:'22 days',dlDays:22,posted:'3 days ago',match:89,
+   applyMode:'online',applyUrl:'https://ibps.in',applyContact:'ibps.in (IBPS RRB)',
+   desc:'Tripura Gramin Bank (TGB), sponsored by SBI, is hiring Office Assistants via IBPS RRB. TGB serves rural Tripura — banking for farmers, SHGs, and village communities. NABARD-regulated pay, annual increments, excellent work-life balance, and the satisfaction of delivering financial inclusion to remote Tripura communities.',
+   resp:['Serve walk-in customers for all banking transactions','Process deposits, withdrawals, and KCC loan repayments','Assist farmers with Kisan Credit Card applications','Conduct financial literacy camps in villages','Maintain branch registers and daily accounts','Support district banking correspondent network'],
+   req:['Graduate in any discipline','IBPS RRB Office Assistant qualified (mandatory)','Bengali or Kokborok language mandatory','Computer Certificate','Age 18–28 years'],
+   docs:['IBPS RRB Scorecard','Graduation Certificate','Domicile Certificate','Language Certificate (Bengali/Kokborok)','2 Photos','Category Certificate'],
+   tips:['IBPS RRB has a local language preference — Bengali/Kokborok proficiency is decisive','Rural bank offers better work-life balance than urban private bank branches','Prepare GK/banking awareness for interview: focus on RBI, NABARD, cooperative banking'],
+   similar:['b01','b03','f01']},
+  {id:'b06',cat:'bank',src:'icicicareers.com',srcCls:'sc-bank',
+   title:'Data Entry Operator',company:'ICICI Bank',location:'Agartala, Tripura',
+   salary:'₹18,000–₹26,000/mo',salNum:18000,deadline:'15 days',dlDays:15,posted:'1 day ago',match:87,isNew:true,
+   applyMode:'online',applyUrl:'https://icicicareers.com',applyContact:'icicicareers.com',
+   desc:'ICICI Bank Agartala requires a Data Entry Operator for back-office support. You will update customer records, digitise loan documentation, verify account opening data, and generate daily exception reports. ICICI provides performance incentives, medical cover, ESIC, and PF in a fast-paced private sector environment.',
+   resp:['Enter and update customer data in ICICI banking systems','Verify KYC documents for account opening process','Digitise physical loan and credit card application documents','Support branch operations team with admin coordination','Generate daily MIS and exception reports','Coordinate with central processing unit on data queries'],
+   req:['Graduate in any discipline','Typing 40 WPM minimum (mandatory)','MS Office suite — Excel proficiency required','Attention to detail is critical','Age 21–30 years','Good English and Bengali communication'],
+   docs:['Graduation Certificate','Computer/Typing Certificate','Aadhaar + PAN Card','2 Recent Passport Photos','Bank Account Proof'],
+   tips:['ICICI Bank online test includes typing speed test — practice beforehand','Background verification is strict at ICICI — keep all documents ready','Private bank jobs at ICICI offer faster career growth than PSU banks'],
+   similar:['b01','b02','f01']},
+
+  // PRIVATE
+  {id:'p01',cat:'private',src:'careers.ril.com',srcCls:'sc-private',
+   title:'Back Office Executive',company:'Reliance Retail (Smart Bazaar)',location:'Agartala, Tripura',
+   salary:'₹15,000–₹22,000/mo',salNum:15000,deadline:'Apply ASAP',dlDays:7,posted:'2 days ago',match:85,isNew:true,
+   applyMode:'online',applyUrl:'https://careers.ril.com',applyContact:'careers.ril.com',
+   desc:'Reliance Retail\'s Smart Bazaar in Agartala is hiring Back Office Executives. You will manage inventory data in SAP, process supplier invoices, prepare daily MIS reports, and coordinate between store and vendor teams. Reliance offers ESIC/PF, annual bonus, employee discounts, and the prestige of working with India\'s largest retailer.',
+   resp:['Stock and inventory data entry into SAP ERP system','Process supplier invoices and purchase orders','Prepare daily/weekly sales MIS for store manager','Coordinate between floor staff and vendor delivery teams','Handle documentation for goods returns and exchanges','Support HR with attendance management and scheduling'],
+   req:['12th Pass or Graduate (Commerce preferred)','MS Office — Excel essential (pivot tables, VLOOKUP)','SAP basic knowledge a plus','Good English and Bengali communication','Age 18–30 years'],
+   docs:['12th or Degree Certificate','Identity Proof (Aadhaar)','2 Photos','PAN Card','Bank Account Details','Resume/CV'],
+   tips:['Excel skills are tested — learn VLOOKUP, SUM, and pivot tables before interview','Reliance Smart Bazaar interviews are typically walk-in on weekdays','Smart appearance and punctuality are key — HR arrives at 10 AM sharp'],
+   similar:['p02','p04','f02']},
+  {id:'p02',cat:'private',src:'direct-walkin',srcCls:'sc-private',
+   title:'Tally Operator',company:'Wholesale Trading Co., Battala',location:'Agartala, Tripura',
+   salary:'₹15,000–₹22,000/mo',salNum:15000,deadline:'Apply ASAP',dlDays:5,posted:'3 days ago',match:86,
+   applyMode:'walkin',applyContact:'Battala Market, Agartala – Call 9436XXXXXX to schedule',
+   desc:'A well-established wholesale trading firm in Agartala\'s Battala area seeks an experienced Tally Operator. You will manage accounts, GST invoicing, purchase/sales ledgers, and inventory using Tally Prime. Office hours 9 AM–6 PM. PF deduction. Salary hike based on performance. Stable, long-term employment with a family-run business.',
+   resp:['Create and manage full books of accounts in Tally Prime','Generate GST-compliant invoices and file monthly returns','Maintain purchase, sales, and stock ledgers','Prepare bank reconciliation statements monthly','Generate P&L and balance sheet reports for owner','Handle petty cash records and journal entries'],
+   req:['12th Pass (Commerce) or B.Com graduate','Tally ERP 9 / Tally Prime expertise (mandatory)','GST filing knowledge (GSTR-1, GSTR-3B)','Basic MS Excel','1+ year experience preferred (Tally cert considered for freshers)'],
+   docs:['Resume/CV','Tally Certificate','12th/B.Com Marksheet','Identity Proof (Aadhaar)'],
+   tips:['Practice Tally Prime GST billing before walk-in — demo likely during interview','Battala market businesses prefer local candidates who know the area','Salary negotiation: mention GST and TDS knowledge for better pay'],
+   similar:['p04','p05','b06']},
+  {id:'p03',cat:'private',src:'direct-company',srcCls:'sc-private',
+   title:'Front Desk Receptionist',company:'Hotel Royal Plaza',location:'VIP Road, Agartala',
+   salary:'₹15,000–₹22,000/mo',salNum:15000,deadline:'Apply ASAP',dlDays:6,posted:'2 days ago',match:78,
+   applyMode:'walkin',applyContact:'HR Manager, Hotel Royal Plaza, VIP Road, Agartala 799001',
+   desc:'Hotel Royal Plaza, one of Agartala\'s premier hotels near VIP Road, is seeking a professional Receptionist. You will be the first impression for guests — managing check-in/checkout, reservations, billing, and guest coordination. Uniform and meals provided. Performance bonus available. Hospitality training given to selected candidates.',
+   resp:['Welcome guests and manage check-in/check-out process efficiently','Handle reservations via phone, email, and OTA platforms','Address guest complaints and coordinate resolution with departments','Process billing, invoicing, and payment on hotel PMS','Coordinate with housekeeping, F&B, and concierge teams','Maintain front desk records, log book, and daily occupancy reports'],
+   req:['12th Pass or Diploma in Hotel Management','Fluent English and Bengali — confident communication','Pleasant personality, smart and well-groomed appearance','Computer skills — PMS software knowledge a plus','Age 20–30 years','Willingness to work morning/evening shifts'],
+   docs:['Resume/CV','12th Certificate + Photo','Identity Proof','2 Passport Photos'],
+   tips:['Hotel interviews test communication — speak clearly and confidently in English','Ask about shift timings and weekend duties during interview','Learn basic computer check-in software (IDS, Opera, or Roomkey PMS)'],
+   similar:['p01','p08','f03']},
+  {id:'p04',cat:'private',src:'direct-company',srcCls:'sc-private',
+   title:'Accountant',company:'CA Firm Agartala',location:'Agartala, Tripura',
+   salary:'₹18,000–₹30,000/mo',salNum:18000,deadline:'Apply ASAP',dlDays:10,posted:'1 week ago',match:83,
+   applyMode:'email',applyContact:'careers@cafirmname.in or call HR: 94368XXXXX',
+   desc:'A reputed Chartered Accountancy firm in Agartala is hiring an Accountant to assist CAs with client accounts, GST compliance, income tax filing, and audit work. Ideal for B.Com graduates or CA Intermediate students wanting hands-on exposure to real-world accounting and tax practice with expert mentorship from practising CAs in Agartala.',
+   resp:['Prepare client accounts: trial balance and ledgers','File GST returns monthly (GSTR-1, GSTR-3B) and annual (GSTR-9)','Assist in income tax return filing (ITR-1 to ITR-6)','Support statutory audit and internal audit engagements','Maintain client records, engagement letters, and correspondence','Prepare financial statements per Companies Act 2013'],
+   req:['B.Com or M.Com graduate','CA Intermediate preferred (not mandatory)','Tally ERP 9 + MS Excel proficiency','GST and Income Tax law knowledge','1–2 years experience preferred (strong freshers considered)'],
+   docs:['Resume/CV','B.Com Certificate + Marksheets','Tally Certificate','CA Intermediate Result if applicable'],
+   tips:['Mention any CA articleship in your CV — gives massive advantage','CA firms value accuracy over speed — double-check all calculations','Ask about client portfolio during interview: MSME and trading clients are common in Agartala'],
+   similar:['p02','b06','g10']},
+  {id:'p05',cat:'private',src:'direct-walkin',srcCls:'sc-private',
+   title:'Sales Executive',company:'Maruti Suzuki Dealer',location:'Agartala, Tripura',
+   salary:'₹18,000–₹30,000 + incentives',salNum:18000,deadline:'Apply ASAP',dlDays:8,posted:'3 days ago',match:75,
+   applyMode:'walkin',applyContact:'Maruti Suzuki Dealership, Agartala – Carry CV + DL',
+   desc:'Agartala\'s leading Maruti Suzuki authorised dealer is hiring Sales Executives for their showroom. You will handle walk-in customers, arrange test drives, negotiate deals, and achieve monthly targets. Monthly incentives of ₹5,000–₹15,000 based on units sold. Maruti provides product training at regional training centre. Company is top Maruti dealer in Tripura.',
+   resp:['Greet customers and understand vehicle requirements','Explain Maruti models — features, variants, and pricing','Arrange test drives and demonstrations','Follow up on enquiries and achieve monthly sales targets','Process booking, finance paperwork, and RTO documentation','Maintain customer database and 30/60/90 day follow-up'],
+   req:['12th Pass or Graduate','Valid 4-wheeler driving licence (mandatory)','Excellent communication and persuasion skills','Target-oriented and self-motivated personality','Basic automobile knowledge helpful','Age 20–30 years'],
+   docs:['Resume/CV','Driving Licence (4-wheeler)','12th Certificate','2 Photos'],
+   tips:['Test drive the demo car before interview — shows genuine enthusiasm','Maruti sales: learn 3 top models — WagonR, Swift, Ertiga features by heart','Incentive is the main income — negotiate base + incentive structure clearly'],
+   similar:['p03','f07','f05']},
+  // FRESHER
+  {id:'f01',cat:'fresher',src:'icicicareers.com',srcCls:'sc-bank',
+   title:'Back Office Fresher (Banking)',company:'ICICI Bank',location:'Agartala, Tripura',
+   salary:'₹18,000–₹25,000/mo',salNum:18000,deadline:'7 days',dlDays:7,posted:'1 day ago',match:90,isNew:true,
+   applyMode:'online',applyUrl:'https://icicicareers.com',applyContact:'icicicareers.com',
+   desc:'ICICI Bank\'s "Aspire" programme for fresh graduates offers an excellent banking career launch in Agartala. Full on-the-job training in banking operations, customer data management, loan processing, and compliance. Clear promotion to regular Senior Executive within 18 months. ESIC, PF, and performance incentives included from day one.',
+   resp:['Learn and operate ICICI\'s core banking systems under mentorship','Process account opening and KYC documentation','Assist in loan application data entry and verification','Attend mandatory training modules and pass assessments','Support senior team members in daily operations','Maintain accuracy and confidentiality of customer data'],
+   req:['Graduate 2022/2023/2024/2025 pass-out (any stream)','Computer basic knowledge and internet skills','Good learning attitude and willingness to work targets','Bengali and English communication skills','Age 21–27 years — No prior experience needed'],
+   docs:['Final Year Marksheet + Degree Certificate','Aadhaar + PAN Card','2 Passport Photos','10th & 12th Certificates','Bank Account Proof'],
+   tips:['ICICI Aspire programme selects based on attitude, not experience — be enthusiastic','Online aptitude test comes before HR round — practice numerical ability','Mention Excel or computer skills prominently in your profile'],
+   similar:['f02','b06','b01']},
+  {id:'f02',cat:'fresher',src:'direct-company',srcCls:'sc-private',
+   title:'Data Entry Trainee',company:'MNC Processing Centre',location:'Agartala, Tripura',
+   salary:'₹12,000–₹18,000/mo',salNum:12000,deadline:'10 days',dlDays:10,posted:'2 days ago',match:88,isNew:true,
+   applyMode:'online',applyUrl:'#',applyContact:'Apply via company portal or email HR',
+   desc:'A multinational data processing company is establishing an Agartala operations centre and seeking Data Entry Trainees. 2-week paid training provided. Work involves business document processing, online form filling, and data verification against source documents. Night shift allowance available. Top performers promoted to regular staff in 6 months.',
+   resp:['Enter business data from documents into digital systems','Verify data accuracy against source documents','Meet daily targets for data processing volume','Report errors and exceptions to team leader','Follow quality standards and data confidentiality norms','Participate in training for speed and accuracy improvement'],
+   req:['12th Pass (any stream)','Typing minimum 30 WPM','Basic computer and internet usage','Willingness to learn quickly','Age 18–28 years — Freshers welcome, no experience needed'],
+   docs:['12th Marksheet','Typing Certificate if any','Aadhaar Card','2 Photos','Resume/CV'],
+   tips:['MNC processing centres value speed AND accuracy equally','Practice typing daily — even 5 WPM improvement can change your evaluation result','Night shift often pays 20–30% extra — worth considering for income boost'],
+   similar:['f01','g03','b06']},
+  {id:'f03',cat:'fresher',src:'airtel.in',srcCls:'sc-private',
+   title:'Customer Care Executive',company:'Airtel Contact Centre',location:'Agartala, Tripura',
+   salary:'₹14,000–₹20,000/mo',salNum:14000,deadline:'15 days',dlDays:15,posted:'4 days ago',match:76,
+   applyMode:'walkin',applyContact:'Airtel Office, Agartala – Walk-in with CV and ID',
+   desc:'Airtel is hiring Customer Care Executives for their Agartala contact centre handling inbound queries for mobile, broadband, and DTH services. Structured 2-week product training provided. Incentives for top performers. Fixed day shifts. Ideal first job for freshers who want to develop communication and CRM skills in a structured corporate environment.',
+   resp:['Handle inbound customer calls for Airtel service support','Resolve billing, recharge, and network queries promptly','Escalate unresolved issues to technical teams','Maintain call quality and customer satisfaction scores','Update CRM system with call details after each interaction','Meet daily call-handling and resolution targets'],
+   req:['12th Pass or Graduate','Clear Bengali and Hindi communication (English a strong plus)','Basic computer skills','Patient temperament with customers','Age 18–28 years','Day shift willingness (no night shift for freshers)'],
+   docs:['Resume/CV','12th Certificate','Identity Proof (Aadhaar)','2 Photos'],
+   tips:['Airtel customer care interview is mostly about communication — practice speaking confidently','Mention any prior customer-facing experience (shop, event, tutoring) in your CV','Incentives are performance-linked — top performers earn ₹3,000–₹5,000 extra monthly'],
+   similar:['f01','f02','p03']},
+  {id:'f04',cat:'fresher',src:'digital-agency',srcCls:'sc-private',
+   title:'Digital Marketing Trainee',company:'Digital Agency Agartala',location:'Agartala, Tripura',
+   salary:'₹10,000–₹15,000/mo',salNum:10000,deadline:'Apply ASAP',dlDays:12,posted:'4 days ago',match:75,
+   applyMode:'email',applyContact:'Send CV to hr@digitalagency.in with subject: "DMT Application"',
+   desc:'A growing Agartala digital marketing agency is hiring freshers passionate about social media, SEO, and content creation. Trainees work on live client campaigns from day one, learning Google Ads, Meta Ads, SEO, and email marketing. After 3-month training period, top performers offered full-time positions with salary hike. Creative and internet-savvy graduates preferred.',
+   resp:['Assist in managing client social media accounts (Facebook, Instagram, LinkedIn)','Write and schedule content posts for digital channels','Support Google/Meta ad campaign setup and monitoring','Learn keyword research and on-page SEO fundamentals','Create graphics using Canva for social campaigns','Compile weekly performance reports from Google Analytics'],
+   req:['Graduate (any stream — BBA/BCom/Mass Comm preferred)','Active on social media with interest in digital trends','English writing skills — clear and concise','Creative mindset and quick learning ability','Smartphone + laptop ownership preferred','Age 18–28 years'],
+   docs:['Resume/CV','Any social media portfolio or personal blog link','Graduation Certificate','Aadhaar Card'],
+   tips:['Create a personal Instagram or blog before applying — shows initiative','Mention any brands or campaigns you\'ve run personally in the interview','Digital agencies value enthusiasm and curiosity over formal qualifications'],
+   similar:['f01','i04','i05']},
+  // IT
+  {id:'i01',cat:'it',src:'direct-company',srcCls:'sc-private',
+   title:'Full Stack Web Developer',company:'IT Solutions Agartala',location:'Agartala, Tripura',
+   salary:'₹18,000–₹35,000/mo',salNum:18000,deadline:'Apply ASAP',dlDays:14,posted:'2 days ago',match:83,isNew:true,
+   applyMode:'email',applyContact:'Send portfolio + CV to hr@itsolutionsagartala.in',
+   desc:'A growing IT services company in Agartala is hiring a Full Stack Developer to build client websites and web apps. You will work across front-end (React.js) and back-end (Node.js) with agile weekly sprints and code reviews. Remote-friendly after 3-month probation. Strong portfolio wins over formal degree. Stack: HTML5/CSS3/JS/React/Node.js/MySQL.',
+   resp:['Build responsive websites and web applications','Develop React.js front-end and Node.js back-end solutions','Integrate REST APIs and third-party services','Write clean, documented, and testable code','Collaborate with designers to implement Figma designs','Fix bugs, optimise page performance, and conduct code reviews'],
+   req:['Diploma or Degree in CS/IT (strong portfolio can override)','React.js, Node.js, HTML5/CSS3/JavaScript proficiency','REST APIs and databases (MySQL/MongoDB) understanding','Git/GitHub version control','Portfolio of 2+ live projects (mandatory)'],
+   docs:['Resume/CV + GitHub Profile link','Portfolio Website or Live Project URLs','Degree/Diploma Certificate'],
+   tips:['GitHub profile with live projects is more important than any certificate','Host your portfolio on Netlify/Vercel — shows deployment skills','During interview, be ready to do a live coding task in VS Code'],
+   similar:['i02','i03','i05']},
+  {id:'i02',cat:'it',src:'direct-walkin',srcCls:'sc-private',
+   title:'IT Support / Computer Operator',company:'Agartala IT Solutions',location:'Agartala, Tripura',
+   salary:'₹12,000–₹20,000/mo',salNum:12000,deadline:'Apply ASAP',dlDays:8,posted:'1 day ago',match:82,isNew:true,
+   applyMode:'walkin',applyContact:'Walk-in: Agartala IT Solutions, Mantribari Road, Agartala',
+   desc:'Agartala IT Solutions requires an IT Support person / Computer Operator to manage their server room, helpdesk, and office IT infrastructure. Role includes hardware/software troubleshooting, printer management, network monitoring, and software installation. Good learning platform for someone wanting to grow in IT infrastructure, networking, or systems administration.',
+   resp:['Maintain and monitor office computers, servers, and network devices','Install, configure, and troubleshoot software and hardware','Provide Level 1 helpdesk support to 30+ office staff','Manage daily data backups and system health monitoring','Update antivirus, Windows patches, and licence management','Maintain IT asset inventory and accessories log'],
+   req:['12th Pass + Hardware/Networking Course (A+/N+ or equivalent)','Basic networking: LAN, Wi-Fi setup, IP configuration','Windows OS, MS Office, and printer troubleshooting','Typing 35 WPM','Basic Linux knowledge a plus'],
+   docs:['Resume/CV','Computer/Networking Course Certificate','Identity Proof','2 Photos'],
+   tips:['Learn basic networking commands: ipconfig, ping, tracert — likely asked in interview','CompTIA A+ or similar certificate greatly improves salary negotiation','Show your personal GitHub, any home lab projects, or Raspberry Pi experiments'],
+   similar:['i01','i03','f02']},
+  {id:'i03',cat:'it',src:'direct-company',srcCls:'sc-private',
+   title:'Graphic Designer',company:'Creative Studio Agartala',location:'Agartala, Tripura',
+   salary:'₹15,000–₹28,000/mo',salNum:15000,deadline:'Apply ASAP',dlDays:10,posted:'2 days ago',match:80,
+   applyMode:'email',applyContact:'Email portfolio PDF + CV to hello@creativestudio.in',
+   desc:'Agartala\'s top creative studio is looking for a Graphic Designer with a strong visual sensibility to handle brand design, social media creatives, and print materials for local and national clients. Tools: Adobe Photoshop, Illustrator, Premiere Pro, Canva. Portfolio quality is the only selection criterion that matters here. Competitive salary and creative autonomy.',
+   resp:['Design social media creatives, banners, stories, and reels covers','Create brand identities: logos, colour guides, brand style guides','Produce print materials: brochures, flyers, business cards, hoardings','Edit short video content for social media campaigns','Collaborate with marketing team on campaign creative concepts','Organise and maintain project files with proper version control'],
+   req:['Adobe Photoshop + Illustrator (Premiere Pro a strong plus)','Strong portfolio showing diverse design work (MANDATORY)','Eye for typography, colour, and composition','Understanding of digital and print technical specs','Portfolio quality trumps qualification for this role'],
+   docs:['Portfolio PDF or Behance/Dribbble Profile Link','Resume/CV','Software Certificates if any','Degree/Diploma Certificate'],
+   tips:['Your portfolio IS your application — a weak portfolio means automatic rejection','Include 3 types of work: social media, print, and branding in portfolio','Learn video editing for reels — most studios now need motion graphics too'],
+   similar:['i04','i05','f04']},
+  {id:'i04',cat:'it',src:'direct-company',srcCls:'sc-private',
+   title:'Data Analyst (Remote-Friendly)',company:'Analytics Company',location:'Agartala / WFH',
+   salary:'₹22,000–₹40,000/mo',salNum:22000,deadline:'Apply ASAP',dlDays:15,posted:'1 week ago',match:78,
+   applyMode:'email',applyContact:'Apply at company portal or email data@analyticsco.in',
+   desc:'A Bengaluru-based analytics company with a remote-friendly team is hiring a Data Analyst who can work from Agartala. You will analyse business datasets, build Power BI dashboards, and present insights to management. Python or SQL skills required. This is an outstanding opportunity to work on national-level client data while based in Agartala.',
+   resp:['Clean and analyse structured and unstructured business datasets','Build interactive dashboards in Power BI or Tableau','Write Python/SQL scripts for data extraction and transformation','Present monthly analytics reports to management','Identify trends and provide actionable business insights','Collaborate with remote data engineering team on pipelines'],
+   req:['Graduate in CS, Statistics, Commerce, or Engineering','MS Excel — pivot tables, VLOOKUP, Power Query (mandatory)','Python (Pandas, NumPy) or R for analysis','Power BI or Tableau dashboard experience preferred','SQL knowledge mandatory (MySQL or PostgreSQL)'],
+   docs:['Resume/CV','GitHub Profile or Data Project Samples','Degree Certificate','Skill Certificates (Power BI, Python, SQL)'],
+   tips:['Build a mini dashboard project with Indian data (IPL, Census, GDP) and share on GitHub','Power BI certification from Microsoft is free and greatly valued','Remote work requires excellent written communication — emphasise this in your CV'],
+   similar:['i01','i03','f04']},
+  {id:'i05',cat:'it',src:'direct-company',srcCls:'sc-private',
+   title:'Content Writer & SEO Specialist',company:'Digital Agency',location:'Agartala, Tripura',
+   salary:'₹12,000–₹22,000/mo',salNum:12000,deadline:'Apply ASAP',dlDays:11,posted:'3 days ago',match:77,
+   applyMode:'email',applyContact:'Email writing samples + CV to content@agency.in',
+   desc:'A digital marketing agency in Agartala is hiring a Content Writer with SEO knowledge to produce blog posts, website copy, product descriptions, and social media content for diverse clients. You will work closely with the SEO and design teams. Excellent English writing ability is non-negotiable. Flexi working hours. Performance bonus for top content performers.',
+   resp:['Write SEO-optimised blog posts, articles, and web copy','Research keywords using Ahrefs/SEMrush/Google Keyword Planner','Write product descriptions for e-commerce clients','Manage content calendar and meet editorial deadlines','Proofread and edit content before client delivery','Track content performance using Google Analytics'],
+   req:['Graduate (any stream — Mass Comm/English/Journalism preferred)','Excellent English writing and grammar skills','Basic SEO understanding — keywords, meta tags, on-page','Canva or basic image editing for featured images','Familiarity with WordPress CMS helpful'],
+   docs:['2–3 Writing Samples (blog posts, articles)','Resume/CV','Graduation Certificate','Aadhaar Card'],
+   tips:['Writing samples matter most — submit your best 2 published articles or blogs','Learn to write for search intent, not just for the topic','Mention your own blog or Medium profile if you have one — shows initiative'],
+   similar:['i03','i04','f04']},
+];
+
+// ═══════════ INIT ═══════════
+document.addEventListener('DOMContentLoaded',()=>{
+  loadSettingsUI();
+  allJobs=[...JOBS];
+  sortJobs('match');
+  filterCat('all');
+  showLoader(false);
+  updateStats();
+  checkNotif();
+  fetchLive(false);
+  setupAuto();
+  document.getElementById('limitBanner').style.display='none';
+  setApiBadge('live');
+});
+
+// ═══════════ VIEWS ═══════════
+function showView(view, btn){
+  document.getElementById('jobsView').style.display=view==='jobs'?'block':'none';
+  document.getElementById('trackerView').style.display=view==='tracker'?'block':'none';
+  document.querySelectorAll('.mtab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else {
+    const mtabs=document.querySelectorAll('.mtab');
+    if(view==='jobs'&&mtabs[0]) mtabs[0].classList.add('active');
+    if(view==='tracker'&&mtabs[1]) mtabs[1].classList.add('active');
+  }
+  if(view==='tracker') renderTracker();
+}
+
+// ═══════════ LIVE FETCH ═══════════
+async function fetchLive(isAuto){
+  const azId=profile.azId||AZ_ID, azKey=profile.azKey||AZ_KEY;
+  if(!azId||!azKey){setApiBadge('local');return;}
+  document.getElementById('limitBanner').style.display='none';
+  if(sett.cache){const c=loadCache();if(c){mergeApi(c);setApiBadge('cached');if(!isAuto)toast('⚡ Loaded from cache ('+c.length+' live jobs)');return;}}
+  setApiBadge('live');
+  const jobs=await fetchAdzuna(azId,azKey);
+  if(jobs.length>0){
+    if(sett.cache)saveCache(jobs);
+    const prev=allJobs.length;mergeApi(jobs);
+    if(isAuto&&allJobs.length>prev){const d=allJobs.length-prev;showNewAlert(d);pushNotif(d);}
+    else if(!isAuto)toast('✅ '+jobs.length+' live jobs loaded!');
+  }else setApiBadge('local');
+}
+const PROXIES=[u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,u=>u];
+async function proxyFetch(url){
+  for(const fn of PROXIES){try{const r=await fetch(fn(url),{headers:{'X-Requested-With':'XMLHttpRequest'},signal:AbortSignal.timeout(8000)});if(!r.ok)continue;const d=await r.json();if(d.results!==undefined)return d;}catch{}}return null;
+}
+async function fetchAdzuna(id,key){
+  const q=[{w:'jobs',wh:'Agartala'},{w:'government clerk',wh:'Tripura'},{w:'bank jobs',wh:'Agartala'},{w:'data entry',wh:'Tripura'},{w:'office assistant',wh:'Agartala'},{w:'IT developer',wh:'Tripura'}];
+  let jobs=[];setProgress(10);
+  for(let i=0;i<q.length;i++){
+    try{
+      const url=`https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=${id}&app_key=${key}&results_per_page=15&what=${encodeURIComponent(q[i].w)}&where=${encodeURIComponent(q[i].wh)}&sort_by=date&content-type=application/json`;
+      const d=await proxyFetch(url);if(!d)continue;
+      const m=(d.results||[]).map(j=>({
+        id:'az-'+j.id,cat:detCat(j.title,j.company?.display_name),src:'adzuna.com',srcCls:'sc-adzuna',
+        title:j.title||'Job Opening',company:j.company?.display_name||'Company',
+        location:j.location?.display_name||'Agartala, Tripura',
+        salary:j.salary_min?'₹'+Math.round(j.salary_min).toLocaleString('en-IN')+'–₹'+Math.round(j.salary_max||j.salary_min*1.3).toLocaleString('en-IN')+'/yr':'Competitive',
+        salNum:j.salary_min||0,deadline:'Apply Soon',dlDays:7,
+        posted:fmtDate(j.created),match:calcMatch(j.title),isNew:isRecent(j.created),
+        applyMode:'online',applyUrl:j.redirect_url||'#',
+        desc:(j.description||'Apply now for this opportunity.').substring(0,400),
+        resp:[],req:[],docs:['Resume/CV','Identity Proof','2 Photos'],tips:[],similar:[],
+        source:'🌐 Adzuna Live'
+      }));
+      jobs=jobs.concat(m);setProgress(10+((i+1)/q.length)*85);
+    }catch{}
+  }
+  setProgress(100);return jobs;
+}
+function mergeApi(api){
+  const seen=new Set(JOBS.map(j=>norm(j.title+j.company)));
+  const uniq=api.filter(j=>{const k=norm(j.title+j.company);if(seen.has(k))return false;seen.add(k);return true;});
+  allJobs=[...JOBS,...uniq];sortJobs(document.getElementById('sortFilter')?.value||'match');
+  filterCat(cat);updateStats();
+  document.getElementById('lastLbl').textContent='Updated '+new Date().toLocaleTimeString();
+  document.getElementById('lastLbl').style.display='block';
+}
+function norm(s){return s.toLowerCase().replace(/\s+/g,'');}
+function detCat(t,c){
+  const tl=(t||'').toLowerCase(),cl=(c||'').toLowerCase();
+  if(cl.includes('bank')||tl.includes('bank'))return'bank';
+  if(tl.includes('govt')||cl.includes('department')||cl.includes('ministry'))return'government';
+  if(tl.includes('developer')||tl.includes('software')||tl.includes('analyst')||tl.includes('designer'))return'it';
+  if(tl.includes('fresher')||tl.includes('trainee')||tl.includes('intern'))return'fresher';
+  return'private';
+}
+function calcMatch(t){
+  let s=55;const tl=(t||'').toLowerCase();
+  if(/back office|clerk|assistant|data entry|computer|operator|tally|accountant/.test(tl))s+=22;
+  const sk=(profile.skills||'').toLowerCase();
+  if(sk)sk.split(',').forEach(x=>{if(x.trim()&&tl.includes(x.trim()))s+=8;});
+  return Math.min(s,98);
+}
+function isRecent(d){return d&&(Date.now()-new Date(d).getTime())/86400000<=3;}
+function fmtDate(d){if(!d)return'Recently';const dd=Math.floor((Date.now()-new Date(d).getTime())/86400000);if(dd<=0)return'Today';if(dd===1)return'Yesterday';if(dd<7)return dd+' days ago';if(dd<30)return Math.floor(dd/7)+' weeks ago';return Math.floor(dd/30)+' months ago';}
+function setApiBadge(t){const el=document.getElementById('apiBadge');if(t==='live'){el.className='badge badge-green';el.textContent='● Live API';}else if(t==='cached'){el.className='badge badge-amber';el.textContent='⚡ Cached';}else{el.className='badge badge-muted';el.textContent='📦 Local';}}
+
+// ═══════════ CACHE ═══════════
+function saveCache(j){localStorage.setItem(CACHE_KEY,JSON.stringify({ts:Date.now(),jobs:j}));}
+function loadCache(){try{const r=localStorage.getItem(CACHE_KEY);if(!r)return null;const{ts,jobs}=JSON.parse(r);if(Date.now()-ts>CACHE_DUR){localStorage.removeItem(CACHE_KEY);return null;}return jobs;}catch{return null;}}
+function clearCache(){localStorage.removeItem(CACHE_KEY);toast('🗑️ Cache cleared');}
+
+// ═══════════ AUTO UPDATE ═══════════
+function setupAuto(){if(sett.auto)startAuto();updateAutoUI();}
+function startAuto(){stopAuto();const ms=(sett.interval||5)*60*1000;nxtSecs=(sett.interval||5)*60;autoTm=setInterval(()=>{fetchLive(true);nxtSecs=(sett.interval||5)*60;},ms);cntTm=setInterval(()=>{if(--nxtSecs<=0)nxtSecs=(sett.interval||5)*60;updateCnt();},1000);updateCnt();}
+function stopAuto(){clearInterval(autoTm);clearInterval(cntTm);autoTm=null;cntTm=null;}
+function toggleAuto(){sett.auto=!sett.auto;localStorage.setItem('jbp_sett',JSON.stringify(sett));sett.auto?(startAuto(),toast('▶ Auto-update ON')):(stopAuto(),toast('⏸ Paused'));updateAutoUI();}
+function updateAutoUI(){const on=sett.auto;document.getElementById('autoLbl').innerHTML=on?'<span class="live-dot"></span>Auto ON':'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--t3)"></span>Auto OFF';document.getElementById('autoToggle').textContent=on?'Pause':'Resume';const sw=document.getElementById('aSw');if(sw)sw.className='tsw '+(on?'on':'');}
+function updateCnt(){const m=Math.floor(nxtSecs/60),s=nxtSecs%60;document.getElementById('nxtUpd').textContent='Next: '+m+':'+s.toString().padStart(2,'0');}
+function saveInterval(){sett.interval=parseInt(document.getElementById('fInterval').value);localStorage.setItem('jbp_sett',JSON.stringify(sett));if(sett.auto)startAuto();toast('Interval saved');}
+function toggleCache(){sett.cache=!sett.cache;localStorage.setItem('jbp_sett',JSON.stringify(sett));const sw=document.getElementById('cSw');if(sw)sw.className='tsw '+(sett.cache?'on':'');toast(sett.cache?'✅ Caching ON':'❌ Caching OFF');}
+
+// ═══════════ FILTER & SEARCH ═══════════
+function getBase(){
+  let b=cat==='saved'?allJobs.filter(j=>saved.includes(j.id)):cat==='all'?allJobs:allJobs.filter(j=>j.cat===cat);
+  const sal=document.getElementById('salFilter')?.value||'all';
+  if(sal!=='all'){const n=parseInt(sal);if(sal==='0')b=b.filter(j=>j.salNum<15000);else if(sal==='15000')b=b.filter(j=>j.salNum>=15000&&j.salNum<=25000);else if(sal==='25000')b=b.filter(j=>j.salNum>25000&&j.salNum<=40000);else if(sal==='40000')b=b.filter(j=>j.salNum>40000);}
+  const af=document.getElementById('applyFilter')?.value||'all';
+  if(af==='applied')b=b.filter(j=>applied.includes(j.id));
+  if(af==='not_applied')b=b.filter(j=>!applied.includes(j.id));
+  return b;
+}
+function applyFilters(){sortJobs(document.getElementById('sortFilter')?.value||'match');filterCat(cat);}
+function filterCat(c,btn){
+  cat=c;
+  document.querySelectorAll('#catTabs .tab').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');else{const t=document.getElementById('tab-'+c);if(t)t.classList.add('active');}
+  filtered=getBase();page=1;renderJobs(filtered.slice(0,PER_PAGE));updateLoadMore();hideNewAlert();
+}
+function liveSearch(){
+  const q=document.getElementById('srch').value.trim().toLowerCase();
+  let b=getBase();
+  filtered=q?b.filter(j=>j.title.toLowerCase().includes(q)||j.company.toLowerCase().includes(q)||j.location.toLowerCase().includes(q)||j.desc.toLowerCase().includes(q)||(j.req||[]).some(r=>r.toLowerCase().includes(q))):b;
+  page=1;renderJobs(filtered.slice(0,PER_PAGE));updateLoadMore();
+  document.getElementById('ctr').textContent=filtered.length+' Jobs';
+}
+function clearSearch(){document.getElementById('srch').value='';filterCat(cat);}
+function loadMore(){page++;renderJobs(filtered.slice(0,page*PER_PAGE));updateLoadMore();}
+function updateLoadMore(){document.getElementById('loadMoreBtn').style.display=filtered.length>page*PER_PAGE?'block':'none';}
+function sortJobs(by){
+  by=by||document.getElementById('sortFilter')?.value||'match';
+  allJobs.sort((a,b)=>{
+    if(by==='new'){if(a.isNew&&!b.isNew)return -1;if(!a.isNew&&b.isNew)return 1;return 0;}
+    if(by==='salary_high')return b.salNum-a.salNum;
+    if(by==='deadline')return a.dlDays-b.dlDays;
+    if(a.isNew&&!b.isNew)return -1;if(!a.isNew&&b.isNew)return 1;return b.match-a.match;
+  });
+}
+
+// ═══════════ RENDER CARDS ═══════════
+const CAT_ICON_SVG={
+  government:`<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  bank:`<svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M3 10l9-7 9 7"/><line x1="12" y1="7" x2="12" y2="10"/></svg>`,
+  private:`<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12"/></svg>`,
+  fresher:`<svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+  it:`<svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  saved:`<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+};
+const CAT_CLS={government:'ci-govt',bank:'ci-bank',private:'ci-private',fresher:'ci-fresher',it:'ci-it'};
+const MC=(m)=>m>=85?'mf-g':m>=70?'mf-a':'mf-m';
+const MT=(m)=>m>=85?'var(--g)':m>=70?'var(--a)':'var(--t3)';
+function dlCls(d){if(d<=5)return'dl-urgent';if(d<=14)return'dl-warn';return'dl-ok';}
+function dlTxt(d,s){if(d<=0)return'LAST DAY';if(d<=5)return d+'d left';if(s==='Apply ASAP')return'Apply ASAP';return s;}
+
+function renderJobs(jobs){
+  const list=document.getElementById('jobList'),empty=document.getElementById('emptyW');
+  if(!jobs.length){empty.style.display='flex';list.style.display='none';document.getElementById('ctr').textContent='0 Jobs';return;}
+  empty.style.display='none';list.style.display='flex';
+  document.getElementById('ctr').textContent=filtered.length+' Jobs';
+  list.innerHTML=jobs.map((j,i)=>`
+    <div class="card${j.isNew?' is-new':''}${j.dlDays<=5?' card-urgent':''} fade-up" style="animation-delay:${Math.min(i*.04,.4)}s" onclick="openModal('${esc(j.id)}')">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div class="cat-icon ${CAT_CLS[j.cat]||'ci-private'}">${CAT_ICON_SVG[j.cat]||CAT_ICON_SVG.private}</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:800;line-height:1.3">${esc(j.title)}</span>
+                ${j.isNew?`<span class="badge badge-green" style="font-size:9px;padding:1px 6px;animation:pulse .9s infinite">NEW</span>`:''}
+                ${j.source?`<span class="source-chip sc-adzuna">${j.source}</span>`:''}
+                ${applied.includes(j.id)?`<span class="badge badge-cyan" style="font-size:9px;padding:1px 6px">✓ Applied</span>`:''}
+              </div>
+              <div style="display:flex;align-items:center;gap:5px">
+                <span style="font-size:11px;color:var(--t2);font-weight:600">${esc(j.company)}</span>
+                <span style="width:3px;height:3px;background:var(--t3);border-radius:50%;flex-shrink:0"></span>
+                <span class="source-chip ${j.srcCls}">${j.src}</span>
+              </div>
+            </div>
+            <button onclick="event.stopPropagation();toggleSave('${esc(j.id)}')" style="background:none;border:none;cursor:pointer;color:${saved.includes(j.id)?'var(--a)':'var(--t3)'};font-size:16px;line-height:1;transition:all .18s;flex-shrink:0;padding:2px" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'">${saved.includes(j.id)?'★':'☆'}</button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:10px;color:var(--t3);margin-top:6px">
+            <span style="display:flex;align-items:center;gap:3px"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${esc(j.location)}</span>
+            <span style="display:flex;align-items:center;gap:3px"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>${esc(j.salary)}</span>
+            <span style="display:flex;align-items:center;gap:3px"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${esc(j.posted)}</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px">
+            <div style="display:flex;align-items:center;gap:7px">
+              <div class="match-track"><div class="${MC(j.match)}" style="height:100%;width:${j.match}%;border-radius:3px"></div></div>
+              <span style="font-size:10px;font-weight:800;color:${MT(j.match)};font-family:var(--mono)">${j.match}%</span>
+            </div>
+            <span class="deadline ${dlCls(j.dlDays)}">${dlTxt(j.dlDays,j.deadline)}</span>
+          </div>
+        </div>
+      </div>
+      <button class="quick-apply" onclick="event.stopPropagation();quickApply('${esc(j.id)}')">
+        <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>Quick Apply
+      </button>
+    </div>
+  `).join('');
+}
+
+// ═══════════ JOB MODAL ═══════════
+function openModal(id){
+  currentId=id;
+  const j=allJobs.find(x=>x.id===id);if(!j)return;
+  const mc=j.match>=85?'var(--g)':j.match>=70?'var(--a)':'var(--t3)';
+  const trkStatus=tracked[id]||null;
+
+  // skill gap analysis
+  const userSkills=(profile.skills||'').toLowerCase().split(',').map(s=>s.trim()).filter(Boolean);
+  const reqHtml=(j.req||[]).map(r=>{
+    const rl=r.toLowerCase();
+    const matched=userSkills.some(s=>s.length>2&&(rl.includes(s)||s.includes(rl.split(' ')[0])));
+    return`<span class="req-chip${matched?' matched':''}">${esc(r)}</span>`;
+  }).join('')||'<span class="req-chip">See job posting for details</span>';
+
+  // apply steps
+  let steps='';
+  if(j.applyMode==='online'){
+    steps=`
+      <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Prepare your documents</strong><br>Gather all documents listed below. Keep scanned copies ready (PDF under 1 MB each).</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Visit the official portal</strong><br><span class="url">${esc(j.applyContact||j.applyUrl||j.src)}</span><br>Register with your email and mobile number.</div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Fill the application form</strong><br>Complete all fields accurately. Upload documents and your updated resume/CV.</div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Save the confirmation</strong><br>Take a screenshot or print the application ID. Deadline: <strong style="color:var(--a)">${esc(j.deadline)}</strong></div></div>`;
+  }else if(j.applyMode==='offline'){
+    steps=`
+      <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Get the application form</strong><br>Download from the official website or collect from the office notice board.</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Fill in block letters</strong><br>Paste a passport photo. Attach attested photocopies of all required documents.</div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Submit at the address</strong><br><span class="url">${esc(j.applyContact||'Contact organisation directly')}</span></div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Keep your receipt</strong><br>Get acknowledgement slip. Last date: <strong style="color:var(--a)">${esc(j.deadline)}</strong></div></div>`;
+  }else if(j.applyMode==='walkin'){
+    steps=`
+      <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Print resume + documents</strong><br>Carry 2 sets of all documents. Keep originals in a separate folder.</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Walk-in address</strong><br><span class="url">${esc(j.applyContact||'Visit the company directly')}</span></div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Arrive early and dress formally</strong><br>Reach before 10 AM. Formal shirt/kurta. Bring 2 passport photos. Be ready for on-spot test.</div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Follow up</strong><br>Note interviewer's contact. Send a thank-you message the same day.</div></div>`;
+  }else if(j.applyMode==='email'){
+    steps=`
+      <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Prepare your resume + cover letter</strong><br>Use the auto-generated cover letter below. Attach your updated resume in PDF.</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Email your application</strong><br><span class="url">${esc(j.applyContact||'HR Email Address')}</span><br>Subject: "Application for ${esc(j.title)} – [Your Name]"</div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Follow up in 5 days</strong><br>If no response, send a polite follow-up email referencing your application date.</div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Track your status</strong><br>Use the Application Tracker tab to update status after submission.</div></div>`;
+  }
+
+  // tips
+  const tipsHtml=(j.tips||[]).length
+    ?j.tips.map((t,i)=>`<div class="tip"><div class="tip-ico">${['💡','⚡','🎯','📌'][i%4]}</div><div class="tip-text">${esc(t)}</div></div>`).join('')
+    :'<div class="tip"><div class="tip-ico">💡</div><div class="tip-text">Read the job description carefully and match your application to the required skills.</div></div>';
+
+  // docs
+  const docsHtml=(j.docs||['Resume/CV','Identity Proof','2 Passport Photos']).map(d=>`<div class="doc">📄 ${esc(d)}</div>`).join('');
+
+  // similar
+  const simHtml=(j.similar||[]).slice(0,3).map(sid=>{
+    const sj=allJobs.find(x=>x.id===sid);if(!sj)return'';
+    return`<div class="sim-card" onclick="openModal('${esc(sj.id)}')"><div class="cat-icon ${CAT_CLS[sj.cat]||'ci-private'}" style="width:36px;height:36px;border-radius:9px;font-size:16px">${CAT_ICON_SVG[sj.cat]||''}</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700">${esc(sj.title)}</div><div style="font-size:10px;color:var(--t3)">${esc(sj.company)} · ${esc(sj.salary)}</div></div><span class="source-chip ${sj.srcCls}">${sj.src}</span></div>`;
+  }).join('');
+
+  // cover letter
+  const cl=`Dear Hiring Manager,
+
+I am writing to apply for the position of ${j.title} at ${j.company}.
+
+Name      : ${profile.name||'[Your Name]'}
+Phone     : ${profile.phone||'[Your Phone]'}
+Email     : ${profile.email||'[Your Email]'}
+Qualification: ${profile.qualification||'[Qualification]'}
+Experience: ${profile.experience||'Fresher / [Years]'}
+Skills    : ${profile.skills||'[List your skills]'}
+Location  : Agartala, Tripura
+
+I am highly interested in this opportunity as it aligns with my academic background and professional goals. I am confident I can contribute effectively to your team and am eager to learn and grow.
+
+Please find my resume attached. I would welcome the opportunity to discuss my application further.
+
+Sincerely,
+${profile.name||'[Your Name]'}
+${profile.phone||'[Phone]'} | ${profile.email||'[Email]'}`;
+
+  // tracker
+  const trkHtml=`
+    <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+      <span style="font-size:10px;color:var(--t3);font-weight:700">UPDATE STATUS:</span>
+      <select onchange="updateTracker('${esc(j.id)}',this.value)" class="status-select" style="font-size:11px">
+        <option value="">Select…</option>
+        <option value="saved"${trkStatus==='saved'?' selected':''}>⭐ Saved</option>
+        <option value="applied"${trkStatus==='applied'?' selected':''}>📧 Applied</option>
+        <option value="interview"${trkStatus==='interview'?' selected':''}>🎤 Interview Scheduled</option>
+        <option value="offer"${trkStatus==='offer'?' selected':''}>🎉 Offer Received</option>
+        <option value="rejected"${trkStatus==='rejected'?' selected':''}>❌ Rejected</option>
+      </select>
+    </div>`;
+
+  document.getElementById('mBody').innerHTML=`
+    <!-- Hero -->
+    <div style="display:flex;gap:14px;align-items:flex-start;padding-bottom:16px;border-bottom:1px solid var(--b1)">
+      <div class="cat-icon ${CAT_CLS[j.cat]||'ci-private'}" style="width:54px;height:54px;border-radius:14px;font-size:26px">${CAT_ICON_SVG[j.cat]||''}</div>
+      <div style="flex:1;min-width:0">
+        <h2 style="font-size:17px;font-weight:800;line-height:1.3;margin-bottom:3px">${esc(j.title)}</h2>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          <span style="font-size:12px;color:var(--t2);font-weight:600">${esc(j.company)}</span>
+          <span class="source-chip ${j.srcCls}">${j.src}</span>
+          ${j.isNew?'<span class="badge badge-green" style="font-size:9px;padding:1px 6px">NEW</span>':''}
+          ${j.source?`<span class="badge badge-cyan" style="font-size:9px;padding:1px 6px">${j.source}</span>`:''}
+          ${applied.includes(j.id)?'<span class="badge badge-green" style="font-size:9px;padding:1px 6px">✓ Applied</span>':''}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+          <div class="match-track" style="width:60px"><div class="${MC(j.match)}" style="height:100%;width:${j.match}%;border-radius:3px"></div></div>
+          <span style="font-size:11px;font-weight:800;color:${mc};font-family:var(--mono)">${j.match}% Match</span>
+          <span class="deadline ${dlCls(j.dlDays)}">${dlTxt(j.dlDays,j.deadline)}</span>
+        </div>
+        ${trkHtml}
+      </div>
+    </div>
+
+    <!-- Details Grid -->
+    <div class="detail-grid">
+      <div class="dtile"><div class="dtile-l">📍 Location</div><div class="dtile-v" style="font-size:11px;font-weight:600;color:var(--t1)">${esc(j.location)}</div></div>
+      <div class="dtile"><div class="dtile-l">💰 Salary</div><div class="dtile-v" style="color:var(--g);font-size:11px">${esc(j.salary)}</div></div>
+      <div class="dtile"><div class="dtile-l">🕐 Posted</div><div class="dtile-v" style="font-size:11px;color:var(--t1)">${esc(j.posted)}</div></div>
+      <div class="dtile"><div class="dtile-l">⏰ Deadline</div><div class="dtile-v" style="color:var(--a);font-size:11px">${esc(j.deadline)}</div></div>
+    </div>
+
+    <!-- Description -->
+    <div class="sec">About This Role</div>
+    <div class="desc-text">${esc(j.desc)}</div>
+
+    <!-- Responsibilities -->
+    ${(j.resp||[]).length?`<div class="sec">Key Responsibilities</div><ul style="padding-left:17px;color:rgba(237,242,250,.8);font-size:12px;line-height:1.85">${j.resp.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:''}
+
+    <!-- Requirements + Skill Match -->
+    <div class="sec">Requirements & Eligibility
+      ${userSkills.length?`<span style="margin-left:auto;font-size:9px;color:var(--t3);text-transform:none;font-weight:600;letter-spacing:0">🟢 Green = you match</span>`:''}
+    </div>
+    ${userSkills.length?`<div style="font-size:9px;color:var(--t3);margin-bottom:6px">Based on your profile skills: <strong style="color:var(--g)">${esc(profile.skills||'')}</strong> — <span onclick="openSettings()" style="color:var(--c);cursor:pointer">Update profile →</span></div>`:''}
+    <div style="display:flex;flex-wrap:wrap">${reqHtml}</div>
+
+    <!-- How to Apply -->
+    <div class="sec">How to Apply</div>
+    <div class="step-list">${steps}</div>
+
+    <!-- Documents -->
+    <div class="sec">Documents Required</div>
+    <div class="doc-list">${docsHtml}</div>
+
+    <!-- Interview Tips -->
+    <div class="sec">💡 Interview Tips</div>
+    ${tipsHtml}
+
+    <!-- Cover Letter -->
+    <div class="sec">📝 Auto Cover Letter</div>
+    <div style="font-size:10px;color:var(--t3);margin-bottom:6px">Generated from your profile. <span onclick="openSettings()" style="color:var(--c);cursor:pointer;font-weight:700">Update profile →</span></div>
+    <div class="cl-box" id="clBox">${esc(cl)}</div>
+    <div style="display:flex;gap:6px;margin-top:7px">
+      <button onclick="copyCL()" style="flex:1;height:34px;border-radius:7px;background:var(--g3);border:1px solid rgba(0,245,168,.2);color:var(--g);font-size:10px;font-weight:800;cursor:pointer;font-family:var(--font)">📋 Copy</button>
+      <button onclick="emailCL('${esc(j.id)}')" style="flex:1;height:34px;border-radius:7px;background:var(--p2);border:1px solid rgba(157,127,255,.2);color:var(--p);font-size:10px;font-weight:800;cursor:pointer;font-family:var(--font)">📧 Email</button>
+      <button onclick="waCL('${esc(j.id)}')" style="flex:1;height:34px;border-radius:7px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);color:#25d366;font-size:10px;font-weight:800;cursor:pointer;font-family:var(--font)">📱 WhatsApp</button>
+    </div>
+
+    <!-- Similar Jobs -->
+    ${simHtml?`<div class="sec">Similar Jobs</div>${simHtml}`:''}
+  `;
+
+  document.getElementById('mFoot').innerHTML=`
+    ${applied.includes(j.id)
+      ?`<div class="applied-banner">✅ You have already applied for this role</div>`
+      :`<button class="abtn abtn-apply" onclick="applyJob('${esc(j.id)}')">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>Apply Now
+        </button>`}
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+      <button class="abtn abtn-tg" onclick="sendTg('${esc(j.id)}')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>TG
+      </button>
+      <button class="abtn abtn-wa" onclick="sendWA('${esc(j.id)}')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WA
+      </button>
+      ${(j.applyUrl&&j.applyUrl!=='#')
+        ?`<a href="${j.applyUrl}" target="_blank" class="abtn abtn-ghost" style="text-decoration:none;font-size:11px">🔗 Link</a>`
+        :`<button class="abtn abtn-ghost" onclick="shareJob('${esc(j.id)}')" style="font-size:11px">📤 Share</button>`}
+    </div>
+  `;
+  const sv=saved.includes(j.id);
+  document.getElementById('mSaveBtn').style.color=sv?'var(--a)':'var(--t2)';
+  document.getElementById('mSaveIco').style.fill=sv?'var(--a)':'none';
+  document.getElementById('jobModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('jobModal').classList.remove('open');document.body.style.overflow='';}
+
+// ═══════════ TRACKER ═══════════
+function updateTracker(id,status){
+  if(!status)return;
+  if(status==='applied'&&!applied.includes(id)){applied.push(id);localStorage.setItem('jbp_applied',JSON.stringify(applied));updateStats();}
+  tracked[id]=status;
+  if(status==='saved'&&!saved.includes(id)){saved.push(id);localStorage.setItem('jbp_saved',JSON.stringify(saved));updateStats();}
+  localStorage.setItem('jbp_tracked',JSON.stringify(tracked));
+  toast('📊 Status updated: '+status);
+}
+function renderTracker(){
+  const f=document.getElementById('trackerFilter')?.value||'all';
+  const trkIds=Object.keys(tracked);
+  let jobs=trkIds.map(id=>allJobs.find(j=>j.id===id)).filter(Boolean);
+  if(f!=='all')jobs=jobs.filter(j=>tracked[j.id]===f);
+  jobs=[...jobs,...saved.filter(id=>!tracked[id]).map(id=>allJobs.find(j=>j.id===id)).filter(Boolean)];
+  jobs=[...new Map(jobs.map(j=>[j.id,j])).values()];
+  const list=document.getElementById('trackerList'),empty=document.getElementById('trackerEmpty');
+  if(!jobs.length){list.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+  const STATUS_OPTS=['saved','applied','interview','offer','rejected'];
+  const SCOLORS={saved:'var(--a)',applied:'var(--c)',interview:'var(--p)',offer:'var(--g)',rejected:'var(--r)'};
+  const SEMOJI={saved:'⭐',applied:'📧',interview:'🎤',offer:'🎉',rejected:'❌'};
+  list.innerHTML=jobs.map(j=>{
+    const s=tracked[j.id]||(saved.includes(j.id)?'saved':'');
+    return`<div class="trkr-card">
+      <div class="cat-icon ${CAT_CLS[j.cat]||'ci-private'}" style="width:38px;height:38px;border-radius:10px">${CAT_ICON_SVG[j.cat]||''}</div>
+      <div style="flex:1;min-width:0;cursor:pointer" onclick="openModal('${esc(j.id)}')">
+        <div style="font-size:12px;font-weight:800">${esc(j.title)}</div>
+        <div style="font-size:10px;color:var(--t3)">${esc(j.company)} · <span class="source-chip ${j.srcCls}">${j.src}</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+        ${s?`<span style="font-size:11px;color:${SCOLORS[s]||'var(--t2)'};font-weight:700">${SEMOJI[s]||''} ${s}</span>`:''}
+        <select onchange="updateTracker('${esc(j.id)}',this.value)" class="status-select">
+          <option value="">Update…</option>
+          ${STATUS_OPTS.map(opt=>`<option value="${opt}"${tracked[j.id]===opt?' selected':''}>${SEMOJI[opt]} ${opt.charAt(0).toUpperCase()+opt.slice(1)}</option>`).join('')}
+        </select>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════ ACTIONS ═══════════
+function toggleSave(id){
+  if(saved.includes(id)){saved=saved.filter(x=>x!==id);toast('Removed from saved');}
+  else{saved.push(id);toast('⭐ Saved!');if(!tracked[id])updateTracker(id,'saved');}
+  localStorage.setItem('jbp_saved',JSON.stringify(saved));
+  filterCat(cat);updateStats();
+  const sb=document.getElementById('mSaveBtn'),si=document.getElementById('mSaveIco');
+  if(sb){const sv=saved.includes(id);sb.style.color=sv?'var(--a)':'var(--t2)';if(si)si.style.fill=sv?'var(--a)':'none';}
+}
+function quickApply(id){openModal(id);setTimeout(()=>applyJob(id),300);}
+function applyJob(id){
+  const j=allJobs.find(x=>x.id===id);if(!j)return;
+  if(!applied.includes(id)){applied.push(id);localStorage.setItem('jbp_applied',JSON.stringify(applied));updateStats();}
+  updateTracker(id,'applied');
+  if(j.applyMode==='online'&&j.applyUrl&&j.applyUrl!=='#'){window.open(j.applyUrl,'_blank');toast('Opening application page…');}
+  else{
+    const sub=encodeURIComponent('Application for '+j.title+' – '+j.company);
+    const body=encodeURIComponent(`Dear Hiring Manager,\n\nI wish to apply for ${j.title} at ${j.company}.\n\nName: ${profile.name||'[Name]'}\nPhone: ${profile.phone||'[Phone]'}\nEmail: ${profile.email||'[Email]'}\nQualification: ${profile.qualification||'[Qualification]'}\nSkills: ${profile.skills||'[Skills]'}\nExperience: ${profile.experience||'[Experience]'}\nLocation: Agartala, Tripura\n\nThank you for your consideration.\n\nSincerely,\n${profile.name||'[Name]'}`);
+    window.open(`mailto:?subject=${sub}&body=${body}`);toast('Opening email client…');
+  }
+  openModal(id);
+}
+function copyCL(){const el=document.getElementById('clBox');if(!el)return;navigator.clipboard.writeText(el.textContent).then(()=>toast('📋 Copied!'));}
+function emailCL(id){const j=allJobs.find(x=>x.id===id);if(!j)return;const s=encodeURIComponent('Application – '+j.title+' at '+j.company);const b=encodeURIComponent(document.getElementById('clBox')?.textContent||'');window.open(`mailto:?subject=${s}&body=${b}`);}
+function waCL(id){const j=allJobs.find(x=>x.id===id);if(!j)return;const txt=`*Application for ${j.title}*\nCompany: ${j.company}\nLocation: ${j.location}\n\n${(document.getElementById('clBox')?.textContent||'').substring(0,300)}…`;window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');}
+function shareJob(id){const j=allJobs.find(x=>x.id===id);if(!j)return;const txt=`🌟 ${j.title}\n🏢 ${j.company}\n📍 ${j.location}\n💰 ${j.salary}\n⏰ Deadline: ${j.deadline}\n📌 Source: ${j.src}\n\nFound on JobBot Pro – Agartala Jobs`;if(navigator.share)navigator.share({title:j.title,text:txt});else navigator.clipboard.writeText(txt).then(()=>toast('📋 Copied!'));}
+function shareJobWA(id){const j=allJobs.find(x=>x.id===id);if(!j)return;const txt=`🌟 *${j.title}*\n🏢 ${j.company}\n📍 ${j.location}\n💰 ${j.salary}\n⏰ ${j.deadline}\n📌 Source: ${j.src}`;window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');}
+async function sendTg(id){
+  const j=allJobs.find(x=>x.id===id);if(!j)return;
+  const{telegramToken:tk,telegramChatId:ci}=profile;
+  if(!tk||!ci){toast('Setup Telegram in Settings');closeModal();setTimeout(openSettings,300);return;}
+  try{const r=await fetch(`https://api.telegram.org/bot${tk}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:ci,parse_mode:'Markdown',text:`🌟 *${j.title}*\n🏢 ${j.company}\n📍 ${j.location}\n💰 ${j.salary}\n📌 Source: \`${j.src}\`\n📊 Match: ${j.match}%\n⏰ Deadline: ${j.deadline}${j.applyUrl&&j.applyUrl!=='#'?'\n🔗 '+j.applyUrl:''}`})});const d=await r.json();toast(d.ok?'✅ Sent to Telegram!':'Error: '+d.description);}catch{toast('❌ Telegram failed');}
+}
+async function sendWA(id){shareJobWA(id);}
+
+// ═══════════ REFRESH ═══════════
+async function refreshJobs(){
+  const ic=document.getElementById('rIco');ic.classList.add('spin-anim');
+  localStorage.removeItem(CACHE_KEY);await fetchLive(false);
+  ic.classList.remove('spin-anim');toast('🔄 Refreshed!');
+}
+
+// ═══════════ SETTINGS ═══════════
+function openSettings(){document.getElementById('settingsModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSettings(){document.getElementById('settingsModal').classList.remove('open');document.body.style.overflow='';}
+function loadSettingsUI(){
+  const f=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v||'';};
+  f('fName',profile.name);f('fEmail',profile.email);f('fPhone',profile.phone);
+  f('fSkills',profile.skills);f('fQual',profile.qualification);f('fExp',profile.experience);
+  f('fTgT',profile.telegramToken);f('fTgC',profile.telegramChatId);
+  f('fAzId',profile.azId||AZ_ID);f('fAzKey',profile.azKey||AZ_KEY);f('fRapid',profile.rapidApiKey);
+  const sel=document.getElementById('fInterval');if(sel)sel.value=sett.interval||5;
+  const cs=document.getElementById('cSw');if(cs)cs.className='tsw '+(sett.cache!==false?'on':'');
+  const as=document.getElementById('aSw');if(as)as.className='tsw '+(sett.auto?'on':'');
+}
+function saveSettings(){
+  profile={name:v('fName'),email:v('fEmail'),phone:v('fPhone'),skills:v('fSkills'),qualification:v('fQual'),experience:v('fExp'),telegramToken:v('fTgT'),telegramChatId:v('fTgC'),azId:v('fAzId'),azKey:v('fAzKey'),rapidApiKey:v('fRapid')};
+  localStorage.setItem('jbp_profile',JSON.stringify(profile));toast('✅ Settings saved!');closeSettings();
+  if(profile.azId||profile.rapidApiKey){document.getElementById('limitBanner').style.display='none';fetchLive(false);}
+}
+function v(id){const e=document.getElementById(id);return e?e.value.trim():'';}
+async function testAdzuna(){const id=v('fAzId')||AZ_ID,key=v('fAzKey')||AZ_KEY;if(!id||!key){toast('Enter keys');return;}toast('Testing…');try{const url=`https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=${id}&app_key=${key}&results_per_page=1&what=jobs&where=Agartala&content-type=application/json`;const d=await proxyFetch(url);toast(d&&d.results!==undefined?`✅ OK! ${d.count||'?'} jobs found`:'❌ Error — check keys');}catch{toast('❌ Connection failed');}}
+async function testTg(){const t=v('fTgT'),c=v('fTgC');if(!t||!c){toast('Enter token & chat ID');return;}try{const r=await fetch(`https://api.telegram.org/bot${t}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:c,text:'✅ *JobBot Pro connected!* Agartala job alerts ready!',parse_mode:'Markdown'})});const d=await r.json();toast(d.ok?'✅ Telegram connected!':'Error: '+d.description);}catch{toast('❌ Failed');}}
+
+// ═══════════ NOTIFICATIONS ═══════════
+function checkNotif(){if('Notification'in window&&Notification.permission==='default')document.getElementById('notifBanner').style.display='flex';updateNotifBtn();}
+function updateNotifBtn(){const btn=document.getElementById('notifBtn');if(!btn)return;const ok='Notification'in window&&Notification.permission==='granted';btn.textContent=ok?'✓ ON':'Enable';btn.style.color=ok?'var(--g)':'var(--t2)';}
+async function enableNotifs(){if('Notification'in window){const p=await Notification.requestPermission();if(p==='granted'){toast('🔔 Notifications ON!');new Notification('JobBot Pro',{body:'Job alerts from Agartala are live!'});}else toast('Notifications blocked by browser');updateNotifBtn();}document.getElementById('notifBanner').style.display='none';}
+function pushNotif(n){if('Notification'in window&&Notification.permission==='granted')new Notification('🎉 '+n+' New Jobs!',{body:n+' new jobs found in Agartala!'});}
+
+// ═══════════ UTILS ═══════════
+function updateStats(){document.getElementById('sTotal').textContent=allJobs.length;document.getElementById('sNew').textContent=allJobs.filter(j=>j.isNew).length;document.getElementById('sSaved').textContent=saved.length;document.getElementById('sMatch').textContent=allJobs.filter(j=>j.match>=85).length;document.getElementById('sApplied').textContent=applied.length;}
+function showLoader(show){document.getElementById('loaderW').style.display=show?'flex':'none';document.getElementById('jobList').style.display=show?'none':'flex';if(show)document.getElementById('emptyW').style.display='none';}
+function setProgress(p){const el=document.getElementById('progFill');if(el)el.style.width=p+'%';}
+function showNewAlert(n){document.getElementById('newAlertTxt').textContent=n+' new jobs found!';document.getElementById('newAlert').style.display='block';const nb=document.getElementById('newBadge');nb.textContent='+'+n+' new';nb.style.display='inline';setTimeout(()=>document.getElementById('newAlert').style.display='none',5000);}
+function hideNewAlert(){document.getElementById('newAlert').style.display='none';document.getElementById('newBadge').style.display='none';}
+function toast(msg){if(_tt)clearTimeout(_tt);document.getElementById('toastMsg').textContent=msg;document.getElementById('toast').style.display='block';_tt=setTimeout(()=>{document.getElementById('toast').style.display='none';_tt=null;},2800);}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeSettings();}});
+</script>
+</body>
+</html>
