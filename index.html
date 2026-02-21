@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JobBot – Trusted Agartala Jobs</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+}
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+background:linear-gradient(135deg,#10b981,#06b6d4);
+}
+
+.verified{
+color:#10b981;
+font-size:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="glass sticky top-0">
+
+<div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+
+<div class="flex items-center gap-3">
+
+<div class="logo w-10 h-10 rounded-lg flex items-center justify-center font-bold">
+JB
+</div>
+
+<div>
+
+<h1 class="font-bold text-lg text-emerald-400">
+JobBot
+</h1>
+
+<p class="text-xs text-slate-400">
+Trusted Agartala Jobs
+</p>
+
+</div>
+
+</div>
+
+<div id="jobCount" class="text-sm text-slate-400">
+Loading...
+</div>
+
+</div>
+
+</header>
+
+
+<!-- SEARCH -->
+
+<section class="max-w-4xl mx-auto p-4">
+
+<input
+id="search"
+placeholder="Search trusted jobs..."
+class="glass w-full p-3 rounded-lg outline-none"
+oninput="searchJobs()"
+/>
+
+</section>
+
+
+<!-- JOB LIST -->
+
+<section class="max-w-4xl mx-auto p-4">
+
+<div id="jobList" class="space-y-3"></div>
+
+</section>
+
+
+<!-- JOB MODAL -->
+
+<div id="modal" class="hidden fixed inset-0 bg-black/80 flex items-end">
+
+<div class="glass w-full p-6 rounded-t-xl">
+
+<div id="modalContent"></div>
+
+<button onclick="closeModal()" class="mt-4 text-red-400">
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+
+// PASTE YOUR FIREBASE CONFIG HERE
+
+const firebaseConfig = {
+
+apiKey: "YOUR_API_KEY",
+
+authDomain: "YOUR_AUTH_DOMAIN",
+
+databaseURL: "YOUR_DATABASE_URL",
+
+projectId: "YOUR_PROJECT_ID",
+
+storageBucket: "YOUR_BUCKET",
+
+messagingSenderId: "YOUR_ID",
+
+appId: "YOUR_APP_ID"
+
+};
+
+
+// INIT FIREBASE
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+const jobsRef = ref(db,"jobs");
+
+let jobs=[];
+
+
+// AUTO UPDATE WHEN NEW JOB ADDED
+
+onValue(jobsRef,(snapshot)=>{
+
+const data=snapshot.val();
+
+if(data){
+
+jobs=Object.values(data);
+
+renderJobs(jobs);
+
+}
+
+});
+
+
+// RENDER JOBS
+
+function renderJobs(list){
+
+document.getElementById("jobCount").innerText=list.length+" Jobs";
+
+document.getElementById("jobList").innerHTML=list.map(job=>`
+
+<div class="glass p-4 rounded-lg cursor-pointer"
+onclick="openJob('${job.id}')">
+
+<h2 class="font-semibold">
+${job.title}
+</h2>
+
+<p class="text-slate-400 text-sm">
+${job.company}
+</p>
+
+<p class="text-emerald-400 text-sm">
+${job.salary}
+</p>
+
+<span class="verified">
+✓ Verified
+</span>
+
+</div>
+
+`).join("");
+
+}
+
+
+// OPEN JOB MODAL
+
+window.openJob=function(id){
+
+const job=jobs.find(j=>j.id==id);
+
+document.getElementById("modalContent").innerHTML=`
+
+<h2 class="text-lg font-bold">
+${job.title}
+</h2>
+
+<p class="text-slate-400 mb-2">
+${job.company}
+</p>
+
+<p class="mb-2">
+${job.location || ""}
+</p>
+
+<p class="text-emerald-400 mb-3">
+${job.salary}
+</p>
+
+<a href="mailto:${job.email}"
+class="block bg-emerald-600 text-center p-3 rounded mb-2">
+Apply via Email
+</a>
+
+<a href="tel:${job.phone}"
+class="block bg-blue-600 text-center p-3 rounded mb-2">
+Call Recruiter
+</a>
+
+${job.link?`
+<a href="${job.link}" target="_blank"
+class="block bg-purple-600 text-center p-3 rounded">
+Official Apply Link
+</a>
+`:""}
+
+`;
+
+document.getElementById("modal").classList.remove("hidden");
+
+}
+
+
+// CLOSE MODAL
+
+window.closeModal=function(){
+
+document.getElementById("modal").classList.add("hidden");
+
+}
+
+
+// SEARCH
+
+window.searchJobs=function(){
+
+let q=document.getElementById("search").value.toLowerCase();
+
+let filtered=jobs.filter(job=>
+
+job.title.toLowerCase().includes(q)
+||
+job.company.toLowerCase().includes(q)
+
+);
+
+renderJobs(filtered);
+
+}
+
+</script>
+
+</body>
+</html>
